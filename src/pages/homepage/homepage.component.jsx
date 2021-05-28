@@ -1,6 +1,7 @@
 import React from "react";
 import "../../index.css";
 import Nav from "./navbar.component";
+import Feature from "./features.component";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
             <div className=" p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 grid-flow-row grid-rows-2 lg:grid-cols-3 bg-gray-50 border-gray-300 border-opacity-90">
               Ciao
             </div>
+            <Feature />
           </div>
         </div>
       </div>
