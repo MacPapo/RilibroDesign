@@ -103,8 +103,8 @@ export const Nav = () => {
               <div className="p-5 border rounded shadow-sm bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       aria-label="Rilibro"
                       title="Rilibro"
                       className="inline-flex items-center"
@@ -127,7 +127,7 @@ export const Nav = () => {
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Rilibro
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -158,31 +158,31 @@ export const Nav = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
                         aria-label="Home Compra"
                         title="Home Compra"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
                         Compra
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Sign in"
-                        title="Sign in"
+                      <Link
+                        to="/login"
+                        aria-label="Login"
+                        title="Login"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Sign in
-                      </a>
+                        Accedi
+                      </Link>
                     </li>
                     <li>
-                      <a href="/" aria-label="Sign up" title="Sign up">
+                      <Link to="/register" aria-label="Sign up" title="Sign up">
                         <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 rounded shadow-md hover:bg-green-700 focus:shadow-outline focus:outline-none">
                           Sign up
                         </button>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
