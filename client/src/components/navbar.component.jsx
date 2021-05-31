@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,24 +56,24 @@ export const Nav = () => {
         </a>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
-              aria-label="Sign in"
-              title="Sign in"
+            <Link
+              to="/login"
+              aria-label="Login"
+              title="Login"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
             >
-              Sign in
-            </a>
+              Accedi
+            </Link>
           </li>
           <li className="pr-4">
-            <a
-              href="/"
+            <Link
+              to="/register"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-600 shadow-inner rounded-xl hover:bg-green-800 focus:shadow-outline focus:outline-none"
               aria-label="Sign up"
               title="Sign up"
             >
-              Sign up
-            </a>
+              Registrati
+            </Link>
           </li>
         </ul>
         <div className="ml-auto lg:hidden">
