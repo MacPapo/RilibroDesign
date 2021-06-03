@@ -3,8 +3,28 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
 import "../../index.css";
+import { login } from "../../auth/login";
 
-export const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = formData;
+
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    login(email, password);
+  };
+
+  if (isAuthenticated) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <>
       <div className="h-screen">
@@ -24,6 +44,10 @@ export const Login = () => {
                       type="email"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                       placeholder="Email"
+                      name="email"
+                      value={email}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="py-2 text-left">
@@ -34,6 +58,10 @@ export const Login = () => {
                       type="password"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                       placeholder="Password"
+                      name="password"
+                      value={password}
+                      onChange={onChange}
+                      minLength="8"
                     />
                   </div>
                   <div className="py-2">
@@ -51,7 +79,7 @@ export const Login = () => {
                   </Link>
                 </div>
                 <div className="mt-12 text-center">
-                  <span>Non hai un account?</span>
+                  <span>Non hai un account? </span>
                   <Link
                     to="/register"
                     className="font-semibold text-black-600 text-md hover:text-green-800"
@@ -68,5 +96,13 @@ export const Login = () => {
     </>
   );
 };
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
 
-export default Login;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(Login);
