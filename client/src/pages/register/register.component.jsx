@@ -83,9 +83,9 @@ export const Register = () => {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       </div>
-      <Footer />
     </>
   );
 };
