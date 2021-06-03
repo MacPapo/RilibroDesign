@@ -31,8 +31,6 @@ export const Profile = () => {
                     aspernatur non deserunt
                   </p>
                 </div>
-
-                <div className="my-4"></div>
               </div>
 
               <div className="w-full h-64 mx-2 md:w-9/12">
@@ -70,8 +68,7 @@ export const Profile = () => {
                         <div className="px-4 py-2 font-semibold">Contatti</div>
                         <div className="px-4 py-2">+11 998001001</div>
                       </div>
-                     
-                      
+
                       <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Email.</div>
                         <div className="px-4 py-2">
@@ -84,7 +81,9 @@ export const Profile = () => {
                         </div>
                       </div>
                       <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Data di nascita</div>
+                        <div className="px-4 py-2 font-semibold">
+                          Data di nascita
+                        </div>
                         <div className="px-4 py-2">Feb 06, 1998</div>
                       </div>
                     </div>

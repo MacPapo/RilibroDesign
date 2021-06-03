@@ -1,7 +1,7 @@
 import React from "react";
 import "../../index.css";
 import Nav from "../../components/navbar.component";
-import Feature from "./features.component";
+import Feature from "./feature.component";
 import { SearchBox } from "../../components/searchbar.component";
 import Footer from "../../components/footer.component";
 
