@@ -6,14 +6,14 @@ import "../../index.css";
 
 export const Login = () => {
   return (
-    <>
+    <div>
       <div className="h-screen">
         <div className="justify-center h-80 bg-header items-top">
           <Nav />
 
-          <div className="pt-20 justify-items-center">
+          <div className="mt-20 justify-items-center">
             <div className="flex items-center justify-center flex-1">
-              <div className="w-full px-4 py-16 text-center transition duration-700 border-gray-200 shadow-xl sm:border-2 lg:px-24 lg:max-w-xl sm:max-w-md bg-gray-50 bg-opacity-90 hover:bg-opacity-100 border-opacity-90 rounded-xl">
+              <div className="relative w-full px-4 py-16 text-center transition duration-700 border-gray-200 shadow-xl sm:border-2 lg:px-24 lg:max-w-xl sm:max-w-md bg-gray-50 bg-opacity-90 hover:bg-opacity-100 border-opacity-90 rounded-xl">
                 <form className="text-center">
                   <h1 className="w-full mb-8 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700">
                     Accedi
@@ -61,11 +61,11 @@ export const Login = () => {
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 
