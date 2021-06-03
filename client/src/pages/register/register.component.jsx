@@ -1,9 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
+import { register } from "../../auth/register";
 
-export const Register = () => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
+  const [formData, setFormData] = useState({
+    nome: "",
+    username: "",
+    email: "",
+    password: "",
+    password2: "",
+    email2: "",
+    telefono: "",
+    whatsapp: "",
+  });
+
+  const {
+    nome,
+    username,
+    email,
+    password,
+    password2,
+    email2,
+    telefono,
+    whatsapp,
+  } = formData;
+
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      setAlert("Passwords do not match", "danger");
+    } else {
+      register({ nome, username, email, password, email2, telefono, whatsapp });
+    }
+  };
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
   return (
     <>
       <div className="h-screen">
@@ -19,18 +59,26 @@ export const Register = () => {
                   <div className="grid grid-cols-2 gap-2">
                     <p className="px-2 font-semibold text-left text-s">Nome</p>
                     <p className="px-2 font-semibold text-left text-s">
-                      Cognome
+                      Username
                     </p>
                     <input
                       type="text"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                       placeholder="Nome"
+                      name="nome"
+                      value={nome}
+                      onChange={onChange}
+                      required
                     />
 
                     <input
                       type="text"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                      placeholder="Cognome"
+                      placeholder="Username"
+                      name="username"
+                      value={username}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="py-2 text-left">
@@ -39,6 +87,10 @@ export const Register = () => {
                       type="email"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                       placeholder="Email"
+                      name="email"
+                      value={email}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="py-2 text-left">
@@ -49,6 +101,10 @@ export const Register = () => {
                       type="password"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                       placeholder="Password"
+                      name="password"
+                      value={password}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="py-2 text-left">
@@ -59,6 +115,10 @@ export const Register = () => {
                       type="password"
                       className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                       placeholder="Conferma Password"
+                      name="password2"
+                      value={password2}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="py-2">
@@ -69,6 +129,7 @@ export const Register = () => {
                       Registrati
                     </button>
                   </div>
+                  /*Qui andranno inseriti i campi dei contatti*/
                 </form>
 
                 <div className="mt-8 text-center">
@@ -90,4 +151,14 @@ export const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  //setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { setAlert, register })(Register);
