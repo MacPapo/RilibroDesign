@@ -1,24 +1,39 @@
 import "./App.css";
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePage from "./pages/homepage/homepage.component";
-import Login from "../src/pages/login/login.components";
-import Register from "../src/pages/register/register.component";
-import Profile from "./pages/profile/profile.component";
+import Routes from "./pages/routing/Routes";
+
+// Redux
 import { Provider } from "react-redux";
-import store from "./utils/store";
+import store from "./store";
+import { loadUser } from "./actions/auth";
+import setAuthToken from "./utils/setAuthToken";
+
+import HomePage from "./pages/homepage/homepage.component";
 
 function App() {
+  useEffect(() => {
+    // check for token in LS
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+    store.dispatch(loadUser());
+
+    // log user out from all tabs if they log out in one tab
+    window.addEventListener("storage", () => {
+      //if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
+  }, []);
+
   return (
     <Provider store={store}>
       <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/cocco-bastardo" component={Register} />
-          <Route exact path="/profile" component={Profile} />
-        </Switch>
+        <Fragment>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route component={Routes} />
+          </Switch>
+        </Fragment>
       </Router>
     </Provider>
   );

@@ -42,7 +42,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/" />;
   }
   return (
     <>
@@ -136,6 +136,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   <span>Hai già un account?</span>
                   <Link
                     to="/login"
+                    s
                     className="font-semibold text-black-600 text-md hover:text-green-800"
                   >
                     Accedi
@@ -161,4 +162,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { setAlert, register })(Register);
+export default connect(mapStateToProps, { register })(Register);

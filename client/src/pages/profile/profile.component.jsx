@@ -20,7 +20,7 @@ export const Profile = () => {
                     />
                   </div>
                   <h1 className="my-1 text-xl font-bold leading-8 text-gray-900">
-                    Matteo Cocco
+                    Matteo Zambon
                   </h1>
                   <h3 className="leading-6 text-gray-600 font-lg text-semibold">
                     Owner at Her Company Inc.

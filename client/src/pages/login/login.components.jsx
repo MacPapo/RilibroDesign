@@ -1,38 +1,40 @@
-import React, {useState} from "react";
+import React, { useState, Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { login } from '../../actions/auth';
+
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
+
 import "../../index.css";
-import { login } from "../../auth/login";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     login(email, password);
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/profile" />;
   }
 
   return (
-    <div>
+    <Fragment>
       <div className="h-screen">
         <div className="justify-center h-80 bg-header items-top">
           <Nav />
-
           <div className="mt-20 justify-items-center">
             <div className="flex items-center justify-center flex-1">
               <div className="relative w-full px-4 py-16 text-center transition duration-700 border-gray-200 shadow-xl sm:border-2 lg:px-24 lg:max-w-xl sm:max-w-md bg-gray-50 bg-opacity-90 hover:bg-opacity-100 border-opacity-90 rounded-xl">
@@ -67,12 +69,12 @@ const Login = ({ login, isAuthenticated }) => {
                     />
                   </div>
                   <div className="py-2">
-                    <input
+                    <button
                       type="submit"
                       className="block w-full p-2 font-bold tracking-wider text-white transition duration-500 bg-green-500 shadow-sm hover:shadow-inner rounded-xl hover:bg-green-700 focus:outline-none"
                     >
                       Accedi
-                    </input>
+                    </button>
                   </div>
                 </form>
                 <div className="text-center">
@@ -95,17 +97,17 @@ const Login = ({ login, isAuthenticated }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
 };
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(mapStateToProps, { login })(Login);
