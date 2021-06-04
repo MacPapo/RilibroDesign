@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
-import { register } from "../../auth/register";
+import { register } from "../../actions/auth";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -52,7 +52,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           <div className="pt-16 justify-items-center ">
             <div className="flex items-center justify-center flex-1 ">
               <div className="w-full px-4 py-10 text-center transition duration-700 border-gray-300 rounded-xl sm:border-2 lg:px-24 lg:max-w-xl sm:max-w-md bg-gray-50 bg-opacity-70 hover:bg-opacity-100 border-opacity-90">
-                <form className="p-1 text-center">
+                <form className="p-1 text-center" onSubmi={onSubmit}>
                   <h1 className="w-full mb-4 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700">
                     Registrati
                   </h1>
@@ -129,15 +129,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       Registrati
                     </button>
                   </div>
-                  /*Qui andranno inseriti i campi dei contatti*/
+                  {/*Qui andranno inseriti i campi dei contatti*/}
                 </form>
 
                 <div className="mt-8 text-center">
-                  <span>Hai già un account?</span>
+                  <span>Hai già un account? </span>
                   <Link
                     to="/login"
                     s
-                    className="font-semibold text-black-600 text-md hover:text-green-800"
+                    className="font-semibold text-black text-md hover:text-green-700"
                   >
                     Accedi
                   </Link>

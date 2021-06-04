@@ -29,8 +29,22 @@ export const loadUser = () => async (dispatch) => {
 
 // Register User
 export const register = (formData) => async (dispatch) => {
+  const body = {
+    nome: formData.nome,
+    username: formData.username,
+    email: formData.email,
+    password: formData.password,
+    contatti: {
+      telefono: formData.telefono,
+      email: formData.email2,
+      whatsapp: formData.whatsapp,
+    },
+  };
   try {
-    const res = await api.post("/users", formData);
+    const res = await fetch("https://api.rilibro.it/v1/authenticate/register", {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -55,16 +69,13 @@ export const login = (email, password) => async (dispatch) => {
   const body = { email, password };
 
   try {
-    const res = await api.post(
-      "/v1/authenticate/login",
-      body
-    );
+    const res = await api.post("/v1/authenticate/login", body);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data.data,
     });
     console.log("res.data", res.data);
-    localStorage.setItem('id', res.data.data.id)
+    localStorage.setItem("id", res.data.data.id);
 
     dispatch(loadUser());
   } catch (err) {
