@@ -2,6 +2,7 @@ import "./App.css";
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from "./pages/routing/Routes";
+import { LOGOUT } from "./actions/types";
 
 // Redux
 import { Provider } from "react-redux";
@@ -21,7 +22,7 @@ function App() {
 
     // log user out from all tabs if they log out in one tab
     window.addEventListener("storage", () => {
-      //if (!localStorage.token) store.dispatch({ type: LOGOUT });
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
     });
   }, []);
 
