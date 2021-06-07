@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -40,17 +41,14 @@ export const Footer = () => {
             </a>
           </div>
           <div className="flex">
-            <p className="mr-1 text-gray-800">Indirizzo:</p>
-            <a
-              href="https://www.google.com/maps/search/mona+di+to+mare/@44.9442197,11.7713186,9z/data=!3m1!4b1"
-              target="000"
-              rel="noopener noreferrer"
-              aria-label="Our address"
-              title="Our address"
-              className="text-purple-400 transition-colors duration-300 hover:text-purple-800"
+            <Link
+              to="/team"
+              aria-label="Team"
+              title="Team"
+              className="text-black transition-colors duration-300 hover:text-green-700"
             >
-              - . - .
-            </a>
+              Team
+            </Link>
           </div>
         </div>
         <div>
