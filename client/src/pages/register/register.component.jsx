@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { setAlert } from '../../actions/alert';
+import { setAlert } from "../../actions/alert";
 import { Link, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -51,7 +51,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <>
       <div className="h-screen">
-        <div className="justify-center h-80 bg-header items-top">
+        <div className="justify-center h-80 bg-register items-top">
           <Nav />
           <div className="pt-16 justify-items-center ">
             <div className="flex items-center justify-center flex-1 ">
@@ -62,12 +62,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 <form className="p-1 text-center" onSubmit={onSubmit}>
                   {count === 1 ? (
                     <>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Nome
-                        </p>
-                        <p className="px-2 font-semibold text-left text-s">
-                          Username
                         </p>
                         <input
                           type="text"
@@ -75,15 +72,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           placeholder="Nome"
                           name="nome"
                           value={nome}
-                          onChange={onChange}
-                          required
-                        />
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Username"
-                          name="username"
-                          value={username}
                           onChange={onChange}
                           required
                         />
@@ -134,6 +122,18 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   ) : null}
                   {count === 2 ? (
                     <>
+                      <p className="px-2 font-semibold text-left text-s">
+                        Username
+                      </p>
+                      <input
+                        type="text"
+                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Username"
+                        name="username"
+                        value={username}
+                        onChange={onChange}
+                        required
+                      />
                       <div className="grid grid-cols-2 gap-2">
                         <p className="px-2 font-semibold text-left text-s">
                           Telefono
@@ -242,7 +242,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
