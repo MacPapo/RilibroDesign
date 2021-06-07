@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { setAlert } from '../../actions/alert';
+import { setAlert } from "../../actions/alert";
 import { Link, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -51,7 +51,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <>
       <div className="h-screen">
-        <div className="justify-center h-80 bg-header items-top">
+        <div className="justify-center h-80 bg-register items-top">
           <Nav />
           <div className="pt-16 justify-items-center ">
             <div className="flex items-center justify-center flex-1 ">
@@ -242,7 +242,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({

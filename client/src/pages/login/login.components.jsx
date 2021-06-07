@@ -2,8 +2,8 @@ import React, { useState, Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-import PropTypes from 'prop-types';
-import { login } from '../../actions/auth';
+import PropTypes from "prop-types";
+import { login } from "../../actions/auth";
 
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
@@ -33,7 +33,7 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <div className="h-screen">
-        <div className="justify-center h-80 bg-header items-top">
+        <div className="justify-center h-80 bg-login items-top">
           <Nav />
           <div className="mt-20 justify-items-center">
             <div className="flex items-center justify-center flex-1">
