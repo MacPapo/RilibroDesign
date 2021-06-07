@@ -38,7 +38,7 @@ export const register = (formData) => async (dispatch) => {
     password: formData.password,
     contatti: {
       telefono: formData.telefono,
-      email: formData.email,
+      email: formData.email2,
       whatsapp: formData.whatsapp,
     },
   };
