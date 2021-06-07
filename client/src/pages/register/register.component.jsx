@@ -57,6 +57,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <div className="flex items-center justify-center flex-1 ">
               <div className="w-full px-4 py-10 text-center transition duration-700 border-gray-300 rounded-xl sm:border-2 lg:px-24 lg:max-w-xl sm:max-w-md bg-gray-50 bg-opacity-70 hover:bg-opacity-100 border-opacity-90">
                 <h1 className="w-full mb-4 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700">
+                  Registrati
+                </h1>
+                <div className="flex justify-center my-6">
+                  <div className="inline-flex h-1 bg-green-400 rounded-full w-36 "></div>
+                </div>
+                <h1 className="w-full mb-4 text-xl font-bold tracking-wider text-gray-600 hover:text-green-700">
                   Step {count} di 3
                 </h1>
                 <form className="p-1 text-center" onSubmit={onSubmit}>
@@ -122,18 +128,20 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   ) : null}
                   {count === 2 ? (
                     <>
-                      <p className="px-2 font-semibold text-left text-s">
-                        Username
-                      </p>
-                      <input
-                        type="text"
-                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                        placeholder="Username"
-                        name="username"
-                        value={username}
-                        onChange={onChange}
-                        required
-                      />
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Username
+                        </p>
+                        <input
+                          type="text"
+                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          placeholder="Username"
+                          name="username"
+                          value={username}
+                          onChange={onChange}
+                          required
+                        />
+                      </div>
                       <div className="grid grid-cols-2 gap-2">
                         <p className="px-2 font-semibold text-left text-s">
                           Telefono
@@ -178,18 +186,60 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   ) : null}
                   {count === 3 ? (
                     <>
-                      <label>Nome:</label>
-                      <p>{nome}</p>
-                      <label>Username:</label>
-                      <p>{username}</p>
-                      <label>Email Personale:</label>
-                      <p>{email}</p>
-                      <label>Email di Contatto:</label>
-                      <p>{email2}</p>
-                      <label>telefono:</label>
-                      <p>{telefono}</p>
-                      <label>Whatsapp:</label>
-                      <p>{whatsapp}</p>
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Nome:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{nome}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Username:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{username}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Email Personale:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{email}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Email di Contatto:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{email2}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Telefono:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{telefono}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Whatsapp:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{whatsapp}</p>
+                        </div>
+                      </div>
+
                       <div className="py-2">
                         <button
                           type="submit"
@@ -203,7 +253,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 </form>
                 <div className="grid grid-cols-2 gap-2">
                   <button
-                    className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
+                    className="block w-full p-2 font-bold tracking-wider text-white bg-red-300 rounded-xl hover:bg-red-400"
                     type="submit"
                     onClick={() => setCount(count - 1)}
                     disabled={count === 1}
@@ -211,7 +261,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                     Indietro
                   </button>
                   <button
-                    className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
+                    className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
                     type="submit"
                     onClick={() => setCount(count + 1)}
                     disabled={count > 2}
