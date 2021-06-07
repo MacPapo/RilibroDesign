@@ -68,9 +68,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 <form className="p-1 text-center" onSubmit={onSubmit}>
                   {count === 1 ? (
                     <>
+                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
+                        Info Personali
+                      </h1>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Nome
+                          Nome 👤
                         </p>
                         <input
                           type="text"
@@ -84,7 +87,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Email
+                          Email 📧
                         </p>
                         <input
                           type="email"
@@ -98,7 +101,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Password
+                          Password 🤫
                         </p>
                         <input
                           type="password"
@@ -112,7 +115,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Conferma Password
+                          Conferma Password 🤫
                         </p>
                         <input
                           type="password"
@@ -128,9 +131,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   ) : null}
                   {count === 2 ? (
                     <>
+                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
+                        Contatti
+                      </h1>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Username
+                          Username 📇
                         </p>
                         <input
                           type="text"
@@ -144,10 +150,10 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       </div>
                       <div className="grid grid-cols-2 gap-2">
                         <p className="px-2 font-semibold text-left text-s">
-                          Telefono
+                          Telefono ☎️
                         </p>
                         <p className="px-2 font-semibold text-left text-s">
-                          WhatsApp
+                          WhatsApp 💬
                         </p>
                         <input
                           type="text"
@@ -170,7 +176,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Email Di Contatto
+                          Email Di Contatto 📬
                         </p>
                         <input
                           type="email"
@@ -186,6 +192,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   ) : null}
                   {count === 3 ? (
                     <>
+                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
+                        Riepilogo
+                      </h1>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Nome:
