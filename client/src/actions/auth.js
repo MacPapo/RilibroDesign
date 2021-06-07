@@ -1,4 +1,3 @@
-import { Redirect } from "react-router";
 import api from "../utils/api";
 import { setAlert } from "./alert";
 import {
@@ -31,50 +30,39 @@ export const loadUser = () => async (dispatch) => {
 
 // Register User
 export const register = (formData) => async (dispatch) => {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var raw = JSON.stringify({
+  console.log("Dati utente", formData)
+  const body = {
     nome: formData.nome,
     username: formData.username,
     email: formData.email,
     password: formData.password,
     contatti: {
       telefono: formData.telefono,
-      email: formData.email2,
+      email: formData.email,
       whatsapp: formData.whatsapp,
     },
-  });
-
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
   };
 
-  console.log("Sono nella funzione register", formData);
-
   try {
-    await fetch(
-      "https://api.rilibro.it/v1/authenticate/register",
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => console.log("token", result));
-      return <Redirect to="/login" />
+    const res = await api.post("/v1/authenticate/register", JSON.stringify(body))
 
+    console.log("risposta", res);
+
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: res.data,
+    });
+    dispatch(loadUser());
   } catch (err) {
-    console.log("err", err);
-    //onst errors = err.response.data.errors;
+    const errors = err.response.data.errors;
 
-    /*if (errors) {
+    if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
 
     dispatch({
       type: REGISTER_FAIL,
-    });*/
+    });
   }
 };
 
