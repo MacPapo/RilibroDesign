@@ -155,9 +155,11 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         to="/sell"
                         aria-label="Sell"
                         title="Sell"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
+                        className="font-extrabold tracking-wide text-center text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Vendi 🤑
+                        <div className="block w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:shadow-inner rounded-xl focus:outline-none focus:border-green-800">
+                          Vendi 🤑
+                        </div>
                       </Link>
                     </li>
                     <li>
@@ -165,9 +167,11 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         to="/"
                         aria-label="Home Compra"
                         title="Home Compra"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
+                        className="font-extrabold tracking-wide text-center text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Compra 📦
+                        <div className="block w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:shadow-inner rounded-xl focus:outline-none focus:border-green-800">
+                          Compra 📦
+                        </div>
                       </Link>
                     </li>
                     <div className="grid grid-cols-2 gap-2 md:gap-5">
@@ -178,7 +182,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                           title="Login"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
                         >
-                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 rounded shadow-md hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 shadow-md rounded-xl hover:bg-green-700 focus:shadow-outline focus:outline-none">
                             Profilo
                           </button>
                         </Link>
@@ -190,7 +194,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                           aria-label="Logout"
                           title="Logout"
                         >
-                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-red-400 rounded shadow-md hover:bg-red-700 focus:shadow-outline focus:outline-none">
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-red-400 shadow-md rounded-xl hover:bg-red-700 focus:shadow-outline focus:outline-none">
                             Logout
                           </button>
                         </Link>

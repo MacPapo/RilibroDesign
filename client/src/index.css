@@ -2,17 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.bg-home {
-  background: url(assets/images/WP01.jpg) center center no-repeat;
-}
-
-.bg-phone {
-  background: url(assets/images/WP00.jpg);
-  background-attachment: fixed;
-}
-
-.bg-register {
-  background: url(assets/images/WP05.jpg) center center no-repeat;
-  background-attachment: fixed;
-}
