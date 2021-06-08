@@ -7,8 +7,8 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const authLinks = (
-    <div className="mx-auto lg:py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8">
-      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 bg-opacity-70 hover:bg-opacity-100 transition duration-700 border-gray-300 border-opacity-90">
+    <div className="mx-auto lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-8">
+      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 lg:bg-opacity-70 hover:bg-opacity-100 transition duration-700 border-gray-300 border-opacity-90">
         <ul className="items-center hidden space-x-8 lg:flex">
           <li className="pl-4">
             <Link
@@ -102,8 +102,8 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 border rounded shadow-sm bg-gray-50">
+            <div className="absolute top-0 left-0 z-50 w-full">
+              <div className="p-5 border rounded shadow-xl bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
@@ -203,8 +203,8 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
   );
 
   const guestLinks = (
-    <div className="mx-auto lg:py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8">
-      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 bg-opacity-70 hover:bg-opacity-100 transition duration-700 border-gray-300 border-opacity-90">
+    <div className="mx-auto lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-8">
+      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 lg:bg-opacity-70 hover:bg-opacity-100 transition duration-700 border-gray-300 border-opacity-90">
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li className="pl-4">
             <Link
@@ -297,8 +297,8 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 border rounded shadow-sm bg-gray-50">
+            <div className="absolute top-0 left-0 z-50 w-full">
+              <div className="p-5 border shadow-xl rounded-xl bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
