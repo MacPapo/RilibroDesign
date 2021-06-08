@@ -1,10 +1,59 @@
 import React, { useState } from "react";
 
+import { addPost } from "../../actions/post";
+
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
 
-export const Sell = () => {
+export const Sell = ({ addPost }) => {
+  const [formData, setFormData] = useState({
+    titolo: "",
+    sottotitolo: "",
+    autore: "",
+    isbn: "",
+    condizione: "",
+    immagine: "",
+    descrizione: "",
+    id: localStorage.getItem("id"),
+    regione: "ciao",
+    provincia: "ciao",
+    comune: "",
+  });
+
   const [count, setCount] = useState(1);
+
+  const {
+    titolo,
+    sottotitolo,
+    autore,
+    isbn,
+    condizione,
+    immagine,
+    descrizione,
+    comune,
+    regione = "ciao",
+    provincia = "ciao",
+  } = formData;
+
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    addPost({
+      titolo,
+      sottotitolo,
+      autore,
+      isbn,
+      condizione,
+      immagine,
+      descrizione,
+      comune,
+      regione,
+      provincia,
+    });
+  };
 
   return (
     <>
@@ -23,7 +72,7 @@ export const Sell = () => {
                 <h1 className="w-full mb-4 text-xl font-bold tracking-wider text-gray-600 hover:text-green-700">
                   Step {count} di 3
                 </h1>
-                <form className="p-1 text-center">
+                <form className="p-1 text-center" onSubmit={onSubmit}>
                   {count === 1 ? (
                     <>
                       <div className="py-2 text-left">
@@ -35,6 +84,8 @@ export const Sell = () => {
                           className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Titolo"
                           name="titolo"
+                          onChange={onChange}
+                          value={titolo}
                           required
                         />
                       </div>
@@ -47,6 +98,8 @@ export const Sell = () => {
                           className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Sottotitolo"
                           name="sottotitolo"
+                          value={sottotitolo}
+                          onChange={onChange}
                           required
                         />
                       </div>
@@ -59,6 +112,8 @@ export const Sell = () => {
                           className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Autore"
                           name="autore"
+                          value={autore}
+                          onChange={onChange}
                           required
                         />
                       </div>
@@ -68,14 +123,31 @@ export const Sell = () => {
                     <>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          ISBN
+                          isbn
                         </p>
                         <input
                           type="text"
                           className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="ISBN"
                           name="isbn"
+                          value={isbn}
+                          onChange={onChange}
                           maxLength="10"
+                          required
+                        />
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Comune
+                        </p>
+                        <input
+                          type="text"
+                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          placeholder="Comune"
+                          name="comune"
+                          value={comune}
+                          onChange={onChange}
                           required
                         />
                       </div>
@@ -87,6 +159,9 @@ export const Sell = () => {
                         <textarea
                           className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Descrizione del libro"
+                          name="descrizione"
+                          value={descrizione}
+                          onChange={onChange}
                         ></textarea>
                       </div>
 
@@ -95,44 +170,25 @@ export const Sell = () => {
                           Condizione{" "}
                         </p>
                         <select className="w-full p-2 border border-gray-200 focus:outline-none focus:border-gray-500">
-                          <option value="select" selected>
+                          <option value={condizione} selected>
                             Imposta Stato
                           </option>
-                          <option value="ottimo">Ottimo</option>
-                          <option value="buono">Buono</option>
-                          <option value="cattive">Cattivo</option>
+                          <option value={condizione}>Ottimo</option>
+                          <option value={condizione}>Buono</option>
+                          <option value={condizione}>Cattivo</option>
                         </select>
                       </div>
                     </>
                   ) : null}
                   {count === 3 ? (
                     <>
-                      <div className="h-64 max-w-lg mx-6 my-40 shadow-lg md:flex md:mx-auto md:max-w-2xl">
-                        <img
-                          className="object-cover w-full h-full rounded-lg rounded-r-none md:w-1/3 pb-5/6"
-                          src="https://ik.imagekit.io/q5edmtudmz/FB_IMG_15658659197157667_wOd8n5yFyXI.jpg"
-                          alt="bag"
-                        />
-                        <div className="w-full px-4 py-4 bg-white rounded-lg md:w-2/3">
-                          <div className="flex items-center">
-                            <h2 className="mr-auto text-xl font-medium text-gray-800">
-                              Your Travel Buddy
-                            </h2>
-                            <p className="font-semibold tracking-tighter text-gray-800">
-                              only
-                              <i className="text-gray-600 line-through">60$</i>
-                              48$
-                            </p>
-                          </div>
-                          <p className="mt-4 text-sm text-gray-700">
-                            Lorem, ipsum dolor sit amet consectetur Amet
-                            veritatis ipsam reiciendis numquam tempore commodi
-                            ipsa suscipit laboriosam, sit earum at sequ
-                            adipisicing elit. Amet veritatis ipsam reiciendis
-                            numquam tempore commodi ipsa suscipit laboriosam,
-                            sit earum at sequi.
-                          </p>
-                        </div>
+                      <div className="py-2">
+                        <button
+                          type="submit"
+                          className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
+                        >
+                          Pubblica
+                        </button>
                       </div>
                     </>
                   ) : null}
