@@ -1,6 +1,5 @@
 import React from "react";
 
-import { loadUser } from "../../actions/auth";
 
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
