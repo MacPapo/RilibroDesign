@@ -9,13 +9,15 @@ const HomePage = () => {
   return (
     <>
       <div className="h-screen">
-        <div className="justify-center h-80 bg-home items-top">
-          <Nav />
-        </div>
-        <div className=" h-80 bg-home">
-          <div className="justify-center mx-auto lg:py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8">
-            <div className=" p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex items-center bg-white bg-opacity-60 border-gray-300 border-opacity-90">
-              <SearchBox />
+        <div className="bg-phone">
+          <div className="justify-center h-80 items-top">
+            <Nav />
+          </div>
+          <div className=" h-80">
+            <div className="justify-center mx-auto lg:py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8">
+              <div className=" p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex items-center bg-white bg-opacity-60 border-gray-300 border-opacity-90">
+                <SearchBox />
+              </div>
             </div>
           </div>
         </div>
