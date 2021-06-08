@@ -209,6 +209,73 @@ export const Sell = ({ addPost }) => {
                   ) : null}
                   {count === 3 ? (
                     <>
+                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
+                        Riepilogo
+                      </h1>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Titolo:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{titolo}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Sottotiolo:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{sottotitolo}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Autore:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{autore}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          ISBN:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{isbn}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Descrizione:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{descrizione}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Condizione:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{condizione}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Comune:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{comune}</p>
+                        </div>
+                      </div>
+
                       <div className="py-2">
                         <button
                           type="submit"
