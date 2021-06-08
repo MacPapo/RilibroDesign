@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
 
 import Footer from "../../components/footer.component";
@@ -21,6 +21,24 @@ export const Sell = ({ addPost }) => {
     provincia: "ciao",
     comune: "",
   });
+
+  const stati = [
+    {
+      id: 1,
+      label: "Ottimo",
+      value: "Ottimo",
+    },
+    {
+      id: 2,
+      label: "Buono",
+      value: "Buono",
+    },
+    {
+      id: 3,
+      label: "Cattivo",
+      value: "Cattivo",
+    },
+  ];
 
   const [count, setCount] = useState(1);
 
@@ -173,13 +191,18 @@ export const Sell = ({ addPost }) => {
                         <p className="px-2 font-semibold text-left text-s">
                           Condizione{" "}
                         </p>
-                        <select className="w-full p-2 border border-gray-200 focus:outline-none focus:border-gray-500">
-                          <option value={condizione} selected>
-                            Imposta Stato
-                          </option>
-                          <option value="ottimo">Ottimo</option>
-                          <option value="buono">Buono</option>
-                          <option value="Cattivo">Cattivo</option>
+                        <select
+                          className="w-full p-2 border border-gray-200 focus:outline-none focus:border-gray-500"
+                          value={condizione}
+                          name="condizione"
+                          onChange={onChange}
+                          required
+                        >
+                          {stati.map((stato) => (
+                            <option key={stato.id} value={stato.value}>
+                              {stato.label}
+                            </option>
+                          ))}
                         </select>
                       </div>
                     </>
@@ -226,10 +249,7 @@ export const Sell = ({ addPost }) => {
 };
 
 Sell.propTypes = {
-  addPost: PropTypes.func.isRequired
+  addPost: PropTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  { addPost }
-)(Sell);
+export default connect(null, { addPost })(Sell);
