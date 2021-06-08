@@ -7,10 +7,10 @@ export default function Team() {
     <>
       <div className="h-screen">
         <div className="bg-fixed bg-center bg-cover bg-team-fixed">
-          <div className="justify-center h-80 items-top">
+          <div className="justify-center items-top">
             <Nav />
           </div>
-          <div className="container w-11/12 pt-5 mx-auto xl:w-full">
+          <div className="container pt-40 mx-auto ">
             <div class="flex flex-col text-center w-full mb-20">
               <h1 class="text-3xl title-font mb-4 text-white font-extrabold">
                 IL NOSTRO TEAM
@@ -25,14 +25,14 @@ export default function Team() {
                 </a>
               </p>
             </div>
-            <div className="grid grid-cols-4 pt-12 sm:flex sm:pt-20">
-              <div className="w-full p-2 sm:w-1/2 md:w-1/3">
-                <div className="max-w-lg bg-white border border-gray-200 rounded shadow-md">
+            <div className="grid row-gap-5 mb-8 xl:grid-cols-4 sm:row-gap-4 sm:grid-cols-2">
+              <div className="p-4 m-4">
+                <div className="max-w-lg border border-gray-200 shadow-xl bg-gray-50 rounded-xl">
                   <div className="flex flex-col items-center py-8">
-                    <div className="w-32 h-32 rounded-full shadow-md">
+                    <div className="w-32 h-32 rounded-full shadow-xl">
                       <img
                         src="https://cdn.tuk.dev/assets/photo-1575978108872-9b1429a19a0f.jfif"
-                        alt
+                        alt="Matteo Ciriaci"
                         className="object-cover w-full h-full rounded-full"
                       />
                     </div>
@@ -50,13 +50,13 @@ export default function Team() {
                   </div>
                 </div>
               </div>
-              <div className="w-full p-2 sm:w-1/2 md:w-1/3">
-                <div className="max-w-lg bg-white border border-gray-200 rounded shadow-md">
+              <div className="p-4 m-4 ">
+                <div className="max-w-lg border border-gray-200 shadow-xl bg-gray-50 rounded-xl">
                   <div className="flex flex-col items-center py-8">
                     <div className="w-32 h-32 rounded-full shadow-md">
                       <img
                         src="https://cdn.tuk.dev/assets/photo-1530577197743-7adf14294584.jfif"
-                        alt
+                        alt="Jacopo Costantini"
                         className="object-cover w-full h-full rounded-full"
                       />
                     </div>
@@ -74,13 +74,13 @@ export default function Team() {
                   </div>
                 </div>
               </div>
-              <div className="w-full p-2 sm:w-1/2 md:w-1/3">
-                <div className="max-w-lg bg-white border border-gray-200 rounded shadow-md">
+              <div className="p-4 m-4 ">
+                <div className="max-w-lg border border-gray-200 shadow-xl bg-gray-50 rounded-xl">
                   <div className="flex flex-col items-center py-8">
                     <div className="w-32 h-32 rounded-full shadow-md">
                       <img
                         src="https://cdn.tuk.dev/assets/photo-1548958921-c5c0fe1b307d.jfif"
-                        alt
+                        alt="Luca Manfrin"
                         className="object-cover w-full h-full rounded-full"
                       />
                     </div>
@@ -98,13 +98,13 @@ export default function Team() {
                   </div>
                 </div>
               </div>
-              <div className="w-full p-2 sm:w-1/2 md:w-1/3">
-                <div className="max-w-lg bg-white border border-gray-200 rounded shadow-md">
+              <div className="p-4 m-4 ">
+                <div className="max-w-lg border border-gray-200 shadow-xl bg-gray-50 rounded-xl">
                   <div className="flex flex-col items-center py-8">
                     <div className="w-32 h-32 rounded-full shadow-md">
                       <img
                         src="https://cdn.tuk.dev/assets/photo-1594369428909-cf575675ca9a.jfif"
-                        alt
+                        alt="Matteo Zambon"
                         className="object-cover w-full h-full rounded-full"
                       />
                     </div>
