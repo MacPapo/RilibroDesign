@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { addPost } from "../../actions/post";
 
 import Footer from "../../components/footer.component";
@@ -30,6 +32,7 @@ export const Sell = ({ addPost }) => {
     condizione,
     immagine,
     descrizione,
+    id,
     comune,
     regione = "ciao",
     provincia = "ciao",
@@ -49,6 +52,7 @@ export const Sell = ({ addPost }) => {
       condizione,
       immagine,
       descrizione,
+      id,
       comune,
       regione,
       provincia,
@@ -173,9 +177,9 @@ export const Sell = ({ addPost }) => {
                           <option value={condizione} selected>
                             Imposta Stato
                           </option>
-                          <option value={condizione}>Ottimo</option>
-                          <option value={condizione}>Buono</option>
-                          <option value={condizione}>Cattivo</option>
+                          <option value="ottimo">Ottimo</option>
+                          <option value="buono">Buono</option>
+                          <option value="Cattivo">Cattivo</option>
                         </select>
                       </div>
                     </>
@@ -221,4 +225,11 @@ export const Sell = ({ addPost }) => {
   );
 };
 
-export default Sell;
+Sell.propTypes = {
+  addPost: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { addPost }
+)(Sell);
