@@ -1,4 +1,7 @@
 import React from "react";
+
+import { loadUser } from "../../actions/auth";
+
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
 
@@ -32,7 +35,6 @@ export const Profile = () => {
                   </p>
                 </div>
               </div>
-
               <div className="w-full h-64 mx-2 md:w-9/12">
                 <div className="p-3 bg-white shadow-inner rounded-xl">
                   <div className="flex items-center space-x-2 font-semibold leading-8 text-gray-900">
@@ -91,10 +93,10 @@ export const Profile = () => {
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

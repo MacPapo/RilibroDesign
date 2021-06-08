@@ -12,15 +12,23 @@ import {
 
 // Load User
 export const loadUser = () => async (dispatch) => {
+
+  console.log("Sono dentro la furnzione LoadUser");
+
   try {
     const res = await api.get("/v1/authenticate", {
       headers: { "x-auth-token": localStorage.getItem("token") },
     });
 
+    //console.log("Token dell'utente", localStorage.getItem("token"));
+    //console.log("variabile res --> ", res);
+    //console.log("informazioni dell'utente --> ", res.data);
+
     dispatch({
       type: USER_LOADED,
-      payload: res.data.data,
+      payload: res.data,
     });
+    
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -68,16 +76,23 @@ export const register = (formData) => async (dispatch) => {
 
 // Login User
 export const login = (email, password) => async (dispatch) => {
+
+  console.log("Sono dentro la funzione di Login");
+
   const body = { email, password };
 
   try {
     const res = await api.post("/v1/authenticate/login", body);
+
+    //console.log("Variabile res --> ", res);
+    //console.log("Variabile res.data --> ", res.data);
+    //console.log("Variabile res.data.data --> ", res.data.data);
+
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data.data,
     });
 
-    console.log("res.data", res.data);
     localStorage.setItem("id", res.data.data.id);
 
     dispatch(loadUser());
