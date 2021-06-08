@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <>
       <div className="h-screen">
-        <div className="bg-phone">
+        <div className="bg-top bg-cover md:bg-no-repeat md:bg-fixed md:bg-center bg-homepage-phone md:bg-cover md:bg-homepage-fixed">
           <div className="justify-center h-80 items-top">
             <Nav />
           </div>
