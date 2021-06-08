@@ -8,6 +8,11 @@
   background-attachment: fixed;
 }
 
+.bg-phone {
+  background: url(assets/images/WP00.jpg);
+  background-attachment: fixed;
+}
+
 .bg-login {
   background: url(assets/images/WP04.jpg) center center no-repeat;
   background-attachment: fixed;
