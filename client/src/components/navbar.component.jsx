@@ -103,7 +103,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 z-50 w-full">
-              <div className="p-5 border rounded shadow-xl bg-gray-50">
+              <div className="p-5 border rounded rounded-b-xl bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
@@ -157,7 +157,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         title="Sell"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Vendi
+                        Vendi 🤑
                       </Link>
                     </li>
                     <li>
@@ -167,31 +167,35 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         title="Home Compra"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Compra
+                        Compra 📦
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/login"
-                        aria-label="Login"
-                        title="Login"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
-                      >
-                        Profilo
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        onClick={logout}
-                        to="/"
-                        aria-label="Logout"
-                        title="Logout"
-                      >
-                        <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 rounded shadow-md hover:bg-green-700 focus:shadow-outline focus:outline-none">
-                          Logout
-                        </button>
-                      </Link>
-                    </li>
+                    <div className="grid grid-cols-2 gap-2 md:gap-5">
+                      <div>
+                        <Link
+                          to="/login"
+                          aria-label="Login"
+                          title="Login"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
+                        >
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 rounded shadow-md hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                            Profilo
+                          </button>
+                        </Link>
+                      </div>
+                      <div>
+                        <Link
+                          onClick={logout}
+                          to="/"
+                          aria-label="Logout"
+                          title="Logout"
+                        >
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-red-400 rounded shadow-md hover:bg-red-700 focus:shadow-outline focus:outline-none">
+                            Logout
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </ul>
                 </nav>
               </div>
@@ -298,7 +302,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 z-50 w-full">
-              <div className="p-5 border shadow-xl rounded-xl bg-gray-50">
+              <div className="p-5 border shadow-xl rounded-b-xl bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
@@ -350,9 +354,11 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         to="/sell"
                         aria-label="Sell"
                         title="Sell"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
+                        className="font-extrabold tracking-wide text-center text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Vendi
+                        <div className="block w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:shadow-inner rounded-xl focus:outline-none focus:border-green-800">
+                          Vendi 🤑
+                        </div>
                       </Link>
                     </li>
                     <li>
@@ -360,28 +366,38 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         to="/"
                         aria-label="Home Compra"
                         title="Home Compra"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
+                        className="font-extrabold tracking-wide text-center text-gray-700 transition-colors duration-200 hover:text-green-400"
                       >
-                        Compra
+                        <div className="block w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:shadow-inner rounded-xl focus:outline-none focus:border-green-800">
+                          Compra 📦
+                        </div>
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/login"
-                        aria-label="Login"
-                        title="Login"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
-                      >
-                        Accedi
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/register" aria-label="Sign up" title="Sign up">
-                        <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 rounded shadow-md hover:bg-green-700 focus:shadow-outline focus:outline-none">
-                          Sign up
-                        </button>
-                      </Link>
-                    </li>
+                    <div className="grid grid-cols-2 gap-2 md:gap-5">
+                      <div>
+                        <Link
+                          to="/login"
+                          aria-label="Login"
+                          title="Login"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
+                        >
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 shadow-xl rounded-xl hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                            Accedi
+                          </button>
+                        </Link>
+                      </div>
+                      <div>
+                        <Link
+                          to="/register"
+                          aria-label="Sign up"
+                          title="Sign up"
+                        >
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-600 shadow-inner rounded-xl hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                            Registrati
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </ul>
                 </nav>
               </div>
