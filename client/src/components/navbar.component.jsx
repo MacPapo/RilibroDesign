@@ -8,7 +8,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const authLinks = (
     <div className="mx-auto lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-8">
-      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 lg:bg-opacity-70 hover:bg-opacity-100 transition duration-700 border-gray-300 border-opacity-90">
+      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 border-gray-300 border-opacity-90">
         <ul className="items-center hidden space-x-8 lg:flex">
           <li className="pl-4">
             <Link
@@ -208,7 +208,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const guestLinks = (
     <div className="mx-auto lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-8">
-      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 lg:bg-opacity-70 hover:bg-opacity-100 transition duration-700 border-gray-300 border-opacity-90">
+      <div className="p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex grid items-center grid-cols-2 lg:grid-cols-3 bg-gray-50 border-gray-300 border-opacity-90">
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li className="pl-4">
             <Link

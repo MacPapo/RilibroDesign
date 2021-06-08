@@ -32,7 +32,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <div className="h-screen">
-      <div className="justify-center items-top bg-login">
+      <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
         <Nav />
         <div className="mt-20 justify-items-center">
           <div className="flex items-center justify-center lg:pb-20">
