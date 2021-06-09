@@ -7,6 +7,7 @@ import { getProfileById } from "../../actions/profile";
 
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
+import { loadUser } from "../../actions/auth";
 
 export const Profile = ({
   getProfileById,
@@ -14,9 +15,11 @@ export const Profile = ({
   auth,
   match,
 }) => {
+
+
   console.log(
     "id -->",
-    localStorage.getItem("id"),
+    auth.id,
     "match-->",
     match,
     "auth -->",
@@ -26,10 +29,9 @@ export const Profile = ({
   );
 
   useEffect(() => {
-    getProfileById(localStorage.getItem("id"));
-  }, [getProfileById, localStorage.getItem("id")]);
+    getProfileById(auth.id);
+  }, [getProfileById, auth.id]);
 
-  console.log("Variabile getProfileById --> ");
 
   return (
     <>
