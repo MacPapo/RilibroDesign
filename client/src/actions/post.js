@@ -12,13 +12,14 @@ import {
 } from "./types";
 
 export const addPost = (formData) => async (dispatch) => {
+
   var requestOptions = {
     method: "GET",
     redirect: "follow",
   };
 
   let myResponse;
-
+  
   const response = await fetch(
     `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comune}`,
     requestOptions,

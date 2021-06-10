@@ -11,6 +11,7 @@ import { register } from "../../actions/auth";
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     nome: "",
+    cognome: "",
     username: "",
     email: "",
     password: "",
@@ -28,7 +29,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     password2,
     email2,
     telefono,
-    whatsapp,
+    whatsapp
   } = formData;
 
   const [count, setCount] = useState(1);
@@ -38,6 +39,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== password2) {
       setAlert("Le password inserite non corrispondono", "danger");
     } else {

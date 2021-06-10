@@ -64,17 +64,22 @@ export const Sell = ({ addPost }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    addPost({
-      titolo,
-      sottotitolo,
-      autore,
-      isbn,
-      condizione,
-      immagine,
-      descrizione,
-      id,
-      comune,
-    });
+    if (comune.trim() == "") {
+      console.log("Il comune non è definito");
+      setAlert("DIO PORCO METTI IL COMUNE");
+    } else {
+      addPost({
+        titolo,
+        sottotitolo,
+        autore,
+        isbn,
+        condizione,
+        immagine,
+        descrizione,
+        id,
+        comune,
+      });
+    }
   };
 
   return (
@@ -174,7 +179,7 @@ export const Sell = ({ addPost }) => {
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner  rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Comune"
                           name="comune"
                           value={comune}
