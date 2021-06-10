@@ -12,9 +12,28 @@ import {
 } from "./types";
 
 export const addPost = (formData) => async (dispatch) => {
+  var requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  let myResponse;
+
+  const response = await fetch(
+    `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comune}`,
+    requestOptions, {}
+  )
+    .then((response) => response.json())
+    .then((result) => myResponse = result)
+    .catch((error) => console.log("error", error));
+
+    console.log("Regione e Provincia", myResponse);
+
   console.log(
     "Sono dentro la funzione add Post, i dati passati sono --> ",
-    formData, "il token vale --> ", localStorage.getItem('token')
+    formData,
+    "il token vale --> ",
+    localStorage.getItem("token")
   );
 
   const body = {
@@ -29,10 +48,10 @@ export const addPost = (formData) => async (dispatch) => {
     },
     utente: formData.id,
     location: {
-      regione: formData.regione,
-      provincia: formData.provincia,
+      regione: myResponse.nome_regione,
+      provincia: myResponse.nome_provincia,
       comune: formData.comune,
-    }
+    },
   };
 
   try {

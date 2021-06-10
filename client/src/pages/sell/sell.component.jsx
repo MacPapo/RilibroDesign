@@ -6,6 +6,7 @@ import { addPost } from "../../actions/post";
 
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
+import { setAlert } from "../../actions/alert";
 
 export const Sell = ({ addPost }) => {
   const [formData, setFormData] = useState({
@@ -17,8 +18,6 @@ export const Sell = ({ addPost }) => {
     immagine: "",
     descrizione: "",
     id: localStorage.getItem("id"),
-    regione: "ciao",
-    provincia: "ciao",
     comune: "",
   });
 
@@ -57,8 +56,6 @@ export const Sell = ({ addPost }) => {
     descrizione,
     id,
     comune,
-    regione = "ciao",
-    provincia = "ciao",
   } = formData;
 
   const onChange = (e) =>
@@ -77,8 +74,6 @@ export const Sell = ({ addPost }) => {
       descrizione,
       id,
       comune,
-      regione,
-      provincia,
     });
   };
 
@@ -179,7 +174,7 @@ export const Sell = ({ addPost }) => {
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner  rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Comune"
                           name="comune"
                           value={comune}
@@ -248,7 +243,6 @@ export const Sell = ({ addPost }) => {
                       <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
                         Riepilogo
                       </h1>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Titolo:
@@ -257,7 +251,6 @@ export const Sell = ({ addPost }) => {
                           <p>{titolo}</p>
                         </div>
                       </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Sottotiolo:
@@ -266,7 +259,6 @@ export const Sell = ({ addPost }) => {
                           <p>{sottotitolo}</p>
                         </div>
                       </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Autore:
@@ -275,7 +267,6 @@ export const Sell = ({ addPost }) => {
                           <p>{autore}</p>
                         </div>
                       </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           ISBN:
@@ -284,7 +275,6 @@ export const Sell = ({ addPost }) => {
                           <p>{isbn}</p>
                         </div>
                       </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Descrizione:
@@ -293,7 +283,6 @@ export const Sell = ({ addPost }) => {
                           <p>{descrizione}</p>
                         </div>
                       </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Condizione:
@@ -302,7 +291,6 @@ export const Sell = ({ addPost }) => {
                           <p>{condizione}</p>
                         </div>
                       </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Comune:
@@ -311,7 +299,6 @@ export const Sell = ({ addPost }) => {
                           <p>{comune}</p>
                         </div>
                       </div>
-
                       <div className="grid grid-cols-2 gap-2">
                         <div className="py-2">
                           <button
