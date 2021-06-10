@@ -39,7 +39,7 @@ export const Profile = ({
             <div className="h-screen">
               <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
                 <Nav />
-                <div className="justify-center mx-auto mb-20 lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-10">
+                <div className="justify-center mx-auto md:mb-20 mb-60 lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-10">
                   <div className="bg-white md:flex no-wrap md:-mx-2 lg:rounded-xl">
                     <div className="container w-full md:w-3/12 md:mx-2 ">
                       <div className="overflow-hidden overflow-clip">
