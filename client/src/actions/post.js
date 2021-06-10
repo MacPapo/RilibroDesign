@@ -21,13 +21,14 @@ export const addPost = (formData) => async (dispatch) => {
 
   const response = await fetch(
     `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comune}`,
-    requestOptions, {}
+    requestOptions,
+    {}
   )
     .then((response) => response.json())
-    .then((result) => myResponse = result)
+    .then((result) => (myResponse = result))
     .catch((error) => console.log("error", error));
 
-    console.log("Regione e Provincia", myResponse);
+  console.log("Regione e Provincia", myResponse);
 
   console.log(
     "Sono dentro la funzione add Post, i dati passati sono --> ",
