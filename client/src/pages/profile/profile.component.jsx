@@ -15,8 +15,6 @@ export const Profile = ({
   auth,
   match,
 }) => {
-
-
   console.log(
     "id -->",
     auth.id,
@@ -25,13 +23,12 @@ export const Profile = ({
     "auth -->",
     auth.user,
     "token",
-    localStorage.getItem("token"),
+    localStorage.getItem("token")
   );
 
   useEffect(() => {
     getProfileById(auth.id);
   }, [getProfileById, auth.id]);
-
 
   return (
     <>
@@ -42,17 +39,17 @@ export const Profile = ({
           <div className="h-screen">
             <div className="justify-center h-80 bg-header items-top">
               <Nav />
-              <div className="container p-5 mx-auto my-5">
+              <div className="justify-center mx-auto lg:py-5 md:max-w-full lg:max-w-screen-xl lg:px-8">
                 <div className="md:flex no-wrap md:-mx-2 ">
-                  <div className="w-full md:w-3/12 md:mx-2">
+                  <div className="container w-full md:w-3/12 md:mx-2">
+                    <div className="overflow-hidden">
+                      <img
+                        className="w-3/4 mx-auto mt-10 mb-5 rounded-full shadow-xl md:w-52"
+                        src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
+                        alt=""
+                      />
+                    </div>
                     <div className="p-3 bg-white border-t-4 border-green-400">
-                      <div className="overflow-hidden image">
-                        <img
-                          className="w-full h-auto mx-auto"
-                          src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
-                          alt=""
-                        />
-                      </div>
                       <h1 className="my-1 text-xl font-bold leading-8 text-gray-900">
                         {auth.user.username}
                       </h1>
