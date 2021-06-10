@@ -12,6 +12,19 @@ import {
 } from "./types";
 
 export const addPost = (formData) => async (dispatch) => {
+
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+  const response = await fetch("https://api.rilibro.it/v1/towns/getTownInfo?nome={`formData.comune`}", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+  console.log("Pronvina e Regione", response);
+
   console.log(
     "Sono dentro la funzione add Post, i dati passati sono --> ",
     formData, "il token vale --> ", localStorage.getItem('token')
