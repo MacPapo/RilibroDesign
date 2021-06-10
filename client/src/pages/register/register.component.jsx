@@ -18,18 +18,17 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     password2: "",
     email2: "",
     telefono: "",
-    whatsapp: "",
   });
 
   const {
     nome,
+    cognome,
     username,
     email,
     password,
     password2,
     email2,
     telefono,
-    whatsapp
   } = formData;
 
   const [count, setCount] = useState(1);
@@ -43,7 +42,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if (password !== password2) {
       setAlert("Le password inserite non corrispondono", "danger");
     } else {
-      register({ nome, username, email, password, email2, telefono, whatsapp });
+      register({ nome, cognome, username, email, password, email2, telefono });
     }
   };
 
@@ -73,19 +72,36 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
                         Info Personali
                       </h1>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Nome 👤
-                        </p>
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Nome"
-                          name="nome"
-                          value={nome}
-                          onChange={onChange}
-                          required
-                        />
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="py-2 text-left">
+                          <p className="px-2 font-semibold text-left text-s">
+                            Nome 👤
+                          </p>
+                          <input
+                            type="text"
+                            className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                            placeholder="Nome"
+                            name="nome"
+                            value={nome}
+                            onChange={onChange}
+                            required
+                          />
+                        </div>
+
+                        <div className="py-2 text-left">
+                          <p className="px-2 font-semibold text-left text-s">
+                            Cognome 👤
+                          </p>
+                          <input
+                            type="text"
+                            className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                            placeholder="Cognome"
+                            name="cognome"
+                            value={cognome}
+                            onChange={onChange}
+                            required
+                          />
+                        </div>
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
@@ -142,7 +158,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Username"
                           name="username"
                           value={username}
@@ -150,12 +166,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           required
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Telefono ☎️
-                        </p>
-                        <p className="px-2 font-semibold text-left text-s">
-                          WhatsApp 💬
                         </p>
                         <input
                           type="text"
@@ -166,16 +179,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           onChange={onChange}
                           required
                         />
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Whatsapp"
-                          name="whatsapp"
-                          value={whatsapp}
-                          onChange={onChange}
-                          required
-                        />
                       </div>
+
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Email Di Contatto 📬
@@ -197,12 +202,23 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                       <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
                         Riepilogo
                       </h1>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Nome:
-                        </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{nome}</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="py-2 text-left">
+                          <p className="px-2 font-semibold text-left text-s">
+                            Nome:
+                          </p>
+                          <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                            <p className="capitalize">{nome}</p>
+                          </div>
+                        </div>
+
+                        <div className="py-2 text-left">
+                          <p className="px-2 font-semibold text-left text-s">
+                            Cognome:
+                          </p>
+                          <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                            <p className="capitalize">{cognome}</p>
+                          </div>
                         </div>
                       </div>
 
@@ -211,7 +227,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           Username:
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{username}</p>
+                          <p className="capitalize">{username}</p>
                         </div>
                       </div>
 
@@ -239,15 +255,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
                           <p>{telefono}</p>
-                        </div>
-                      </div>
-
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Whatsapp:
-                        </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{whatsapp}</p>
                         </div>
                       </div>
 

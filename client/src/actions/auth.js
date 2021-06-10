@@ -41,13 +41,13 @@ export const register = (formData) => async (dispatch) => {
   console.log("Dati utente", formData)
   const body = {
     nome: formData.nome,
+    cognome: formData.cognome,
     username: formData.username,
     email: formData.email,
     password: formData.password,
     contatti: {
       telefono: formData.telefono,
       email: formData.email2,
-      whatsapp: formData.whatsapp,
     },
   };
 
