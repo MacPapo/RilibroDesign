@@ -174,7 +174,7 @@ export const Sell = ({ addPost }) => {
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner  rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Comune"
                           name="comune"
                           value={comune}
