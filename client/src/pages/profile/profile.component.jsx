@@ -55,7 +55,7 @@ export const Profile = ({
                         </h1>
                       </div>
                     </div>
-                    <div className="h-64 mx-2 mt-10 shadow-inner md:w-9/12 md:mr-7 bg-gray-50 rounded-xl">
+                    <div className="h-64 mx-4 mt-10 shadow-inner md:mx-2 md:w-9/12 md:mr-7 bg-gray-50 rounded-xl">
                       <div className="p-3 shadow-inner bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-2 font-semibold leading-8 text-gray-900">
                           <span className=" text text-black-500 hover:text-green-800">
