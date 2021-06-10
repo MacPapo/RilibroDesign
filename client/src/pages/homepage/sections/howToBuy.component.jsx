@@ -4,19 +4,19 @@ const features = [
   {
     titolo: "Cerca",
     descrizione:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Trova i libri di cui hai bisogno cercando per titolo o per ISBN, e specificando l’area di ricerca.",
     icon: SearchIcon,
   },
   {
     titolo: "Contatta un venditore",
     descrizione:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Una volta trovato l’annuncio desiderato, dovrai contattare il venditore via whatsapp o per email. Mi raccomando, non condividere mai la tua password con nessuno!",
     icon: UsersIcon,
   },
   {
     titolo: "Affare Fatto!",
     descrizione:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Dopo esserti accordato con il venditore, potrai effettuare lo scambio a mano o ricevere il tuo libro con un corriere. Non condividere mai informazioni sulla tua carta di credito.",
     icon: CheckIcon,
   },
 ];

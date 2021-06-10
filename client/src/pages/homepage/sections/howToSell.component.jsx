@@ -4,19 +4,19 @@ const features = [
   {
     titolo: "Pubblica un annuncio",
     descrizione:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Per iniziare a vendere su rilibro, crea il tuo annuncio pubblicando foto e informazioni sul tuo libro, specificando anche la tua città.",
     icon: BookOpenIcon,
   },
   {
     titolo: "Pazienta",
     descrizione:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "I libri scolastici vengono comprati solitamente verso fine Agosto / inizio Settembre. Se il tuo annuncio è risultato interessante riceverai richieste sulla tua modalità di contatto preferita!",
     icon: ClockIcon,
   },
   {
     titolo: "Affare Fatto!",
     descrizione:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Accordati con il compratore su prezzo e modalità di consegna e effettua lo scambio. Mi raccomando, non pagare mai il compratore in anticipo per ricevere il tuo pagamento, rischi di essere truffato!",
     icon: CurrencyEuroIcon,
   }
 ];
