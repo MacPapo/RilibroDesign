@@ -25,16 +25,20 @@ export const Sell = ({ addPost }) => {
   const stati = [
     {
       id: 1,
+      label: "Imposta Stato",
+      value: "Imposta Stato",
+    },{
+      id: 2,
       label: "Ottimo",
       value: "Ottimo",
     },
     {
-      id: 2,
+      id: 3,
       label: "Buono",
       value: "Buono",
     },
     {
-      id: 3,
+      id: 4,
       label: "Cattivo",
       value: "Cattivo",
     },
