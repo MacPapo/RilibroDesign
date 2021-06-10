@@ -45,8 +45,8 @@ export const Profile = ({
                       <div className="overflow-hidden overflow-clip">
                         <img
                           className="w-3/4 mx-auto mt-10 mb-5 rounded-full shadow-xl md:w-52"
-                          src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
-                          alt=""
+                          src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                          alt="Immagine di profilo"
                         />
                       </div>
                       <div className="p-3 mx-24 bg-white border-t-4 border-green-400">
@@ -118,10 +118,15 @@ export const Profile = ({
                             </div>
                             <div className="flex flex-col md:grid md:grid-flow-col md:grid-cols-2 ">
                               <div className="px-4 py-2 font-semibold text-center">
-                                Data di nascita
+                                Email Di Contatto
                               </div>
                               <div className="px-4 py-2 text-center">
-                                Feb 06, 1998
+                                <a
+                                  className="overflow-hidden text-blue-800 overflow-ellipsis"
+                                  href="mailto:jane@example.com"
+                                >
+                                  {auth.user.contatti.email}
+                                </a>
                               </div>
                             </div>
                           </div>
