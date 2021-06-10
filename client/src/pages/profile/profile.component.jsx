@@ -7,7 +7,6 @@ import { getProfileById } from "../../actions/profile";
 
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
-import { loadUser } from "../../actions/auth";
 
 export const Profile = ({
   getProfileById,
@@ -89,7 +88,7 @@ export const Profile = ({
                         <div className="grid text-sm md:grid-cols-2">
                           <div className="grid grid-cols-2">
                             <div className="px-4 py-2 font-semibold">Nome</div>
-                            <div className="px-4 py-2">Jane</div>
+                            <div className="px-4 py-2">{auth.user.nome}</div>
                           </div>
                           <div className="grid grid-cols-2">
                             <div className="px-4 py-2 font-semibold">

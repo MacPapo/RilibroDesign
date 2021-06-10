@@ -27,7 +27,8 @@ export const Sell = ({ addPost }) => {
       id: 1,
       label: "Imposta Stato",
       value: "Imposta Stato",
-    },{
+    },
+    {
       id: 2,
       label: "Ottimo",
       value: "Ottimo",
@@ -143,13 +144,22 @@ export const Sell = ({ addPost }) => {
                           required
                         />
                       </div>
+                      <div className="py-2">
+                        <button
+                          className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
+                          onClick={() => setCount(count + 1)}
+                          disabled={count > 2}
+                        >
+                          Avanti
+                        </button>
+                      </div>
                     </>
                   ) : null}
                   {count === 2 ? (
                     <>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          isbn
+                          ISBN
                         </p>
                         <input
                           type="text"
@@ -208,6 +218,28 @@ export const Sell = ({ addPost }) => {
                             </option>
                           ))}
                         </select>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="py-2">
+                          <button
+                            className="block w-full p-2 font-bold tracking-wider text-white bg-red-300 rounded-xl hover:bg-red-400"
+                            onClick={() => setCount(count - 1)}
+                            disabled={count === 1}
+                          >
+                            Indietro
+                          </button>
+                        </div>
+
+                        <div className="py-2">
+                          <button
+                            className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
+                            onClick={() => setCount(count + 1)}
+                            disabled={count > 2}
+                          >
+                            Avanti
+                          </button>
+                        </div>
                       </div>
                     </>
                   ) : null}
@@ -280,35 +312,29 @@ export const Sell = ({ addPost }) => {
                         </div>
                       </div>
 
-                      <div className="py-2">
-                        <button
-                          type="submit"
-                          className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
-                        >
-                          Pubblica
-                        </button>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="py-2">
+                          <button
+                            className="block w-full p-2 font-bold tracking-wider text-white bg-red-300 rounded-xl hover:bg-red-400"
+                            onClick={() => setCount(count - 1)}
+                            disabled={count === 1}
+                          >
+                            Indietro
+                          </button>
+                        </div>
+
+                        <div className="py-2">
+                          <button
+                            type="submit"
+                            className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
+                          >
+                            Pubblica
+                          </button>
+                        </div>
                       </div>
                     </>
                   ) : null}
                 </form>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    className="block w-full p-2 font-bold tracking-wider text-white bg-red-300 rounded-xl hover:bg-red-400"
-                    type="submit"
-                    onClick={() => setCount(count - 1)}
-                    disabled={count === 1}
-                  >
-                    Indietro
-                  </button>
-                  <button
-                    className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
-                    type="submit"
-                    onClick={() => setCount(count + 1)}
-                    disabled={count > 2}
-                  >
-                    Avanti
-                  </button>
-                </div>
               </div>
             </div>
           </div>
