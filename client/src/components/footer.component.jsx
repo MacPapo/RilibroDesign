@@ -77,7 +77,7 @@ export const Footer = () => {
         <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
           <li>
             <a
-              href="/"
+              href="https://www.iubenda.com/privacy-policy/12371003"
               className="text-sm text-gray-600 transition-colors duration-300 hover:text-purple-400"
             >
               Privacy Policy
