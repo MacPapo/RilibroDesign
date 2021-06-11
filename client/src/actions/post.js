@@ -41,7 +41,7 @@ export const addPost = (formData) => async (dispatch) => {
   const body = {
     libro: {
       titolo: formData.titolo,
-      sottotitolo: "porcodio",
+      prezzo: formData.prezzo,
       autore: formData.autore,
       ISBN: formData.isbn,
       condizione: formData.condizione,

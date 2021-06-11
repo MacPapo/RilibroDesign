@@ -11,7 +11,7 @@ import { setAlert } from "../../actions/alert";
 export const Sell = ({ addPost }) => {
   const [formData, setFormData] = useState({
     titolo: "",
-    sottotitolo: "",
+    prezzo: "",
     autore: "",
     isbn: "",
     condizione: "",
@@ -48,7 +48,7 @@ export const Sell = ({ addPost }) => {
 
   const {
     titolo,
-    sottotitolo,
+    prezzo,
     autore,
     isbn,
     condizione,
@@ -72,7 +72,7 @@ export const Sell = ({ addPost }) => {
       console.log("comuneToUppercase ", comuneToUppercase);
       addPost({
         titolo,
-        sottotitolo,
+        prezzo,
         autore,
         isbn,
         condizione,
@@ -156,9 +156,9 @@ export const Sell = ({ addPost }) => {
                           type="number"
                           className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Prezzo €"
-                          name="prezzo"
                           onChange={onChange}
-                          value={titolo}
+                          name="prezzo"
+                          value={prezzo}
                           required
                         />
                       </div>
@@ -196,7 +196,7 @@ export const Sell = ({ addPost }) => {
                           Descrizione
                         </p>
                         <textarea
-                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Descrizione del libro"
                           name="descrizione"
                           value={descrizione}
@@ -280,7 +280,7 @@ export const Sell = ({ addPost }) => {
                           Prezzo:
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{autore} €</p>
+                          <p>{prezzo} €</p>
                         </div>
                       </div>
                       <div className="py-2 text-left">
@@ -296,7 +296,7 @@ export const Sell = ({ addPost }) => {
                         <p className="px-2 font-semibold text-left text-s">
                           Descrizione:
                         </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
                           <p>{descrizione}</p>
                         </div>
                       </div>
