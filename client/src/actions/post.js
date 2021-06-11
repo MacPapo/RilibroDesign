@@ -21,7 +21,7 @@ export const addPost = (formData) => async (dispatch) => {
   let myResponse;
   
   const response = await fetch(
-    `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comune}`,
+    `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comuneToUppercase}`,
     requestOptions,
     {}
   )
@@ -41,18 +41,18 @@ export const addPost = (formData) => async (dispatch) => {
   const body = {
     libro: {
       titolo: formData.titolo,
-      sottotitolo: formData.sottotitolo,
+      sottotitolo: "porcodio",
       autore: formData.autore,
       ISBN: formData.isbn,
       condizione: formData.condizione,
-      immagine: formData.immagine,
+      immagine: "https://res.cloudinary.com/rilibro/image/upload/v1620286954/default-rilibro_p1prll.jpg",
       descrizione: formData.descrizione,
     },
     utente: formData.id,
     location: {
       regione: myResponse.nome_regione,
       provincia: myResponse.nome_provincia,
-      comune: formData.comune,
+      comune: formData.comuneToUppercase,
     },
   };
 

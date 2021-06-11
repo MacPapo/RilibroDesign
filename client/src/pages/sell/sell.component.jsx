@@ -66,8 +66,10 @@ export const Sell = ({ addPost }) => {
 
     if (comune.trim() === "") {
       console.log("Il comune non è definito");
-      setAlert("DIO PORCO METTI IL COMUNE");
+      setAlert("Il comune non è definito", "danger");
     } else {
+      const comuneToUppercase = comune.charAt(0).toUpperCase() + comune.slice(1);
+      console.log("comuneToUppercase ", comuneToUppercase);
       addPost({
         titolo,
         sottotitolo,
@@ -77,7 +79,7 @@ export const Sell = ({ addPost }) => {
         immagine,
         descrizione,
         id,
-        comune,
+        comuneToUppercase,
       });
     }
   };
