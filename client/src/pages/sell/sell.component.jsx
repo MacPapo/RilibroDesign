@@ -64,7 +64,7 @@ export const Sell = ({ addPost }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (comune.trim() == "") {
+    if (comune.trim() === "") {
       console.log("Il comune non è definito");
       setAlert("DIO PORCO METTI IL COMUNE");
     } else {
@@ -104,29 +104,16 @@ export const Sell = ({ addPost }) => {
                     <>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Titolo
+                          ISBN
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Titolo"
-                          name="titolo"
+                          className="block w-full px-4 py-2 uppercase bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          placeholder="ISBN"
+                          name="isbn"
+                          value={isbn}
                           onChange={onChange}
-                          value={titolo}
-                          required
-                        />
-                      </div>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Sottotitolo
-                        </p>
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Sottotitolo"
-                          name="sottotitolo"
-                          value={sottotitolo}
-                          onChange={onChange}
+                          maxLength="10"
                           required
                         />
                       </div>
@@ -136,7 +123,7 @@ export const Sell = ({ addPost }) => {
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Autore"
                           name="autore"
                           value={autore}
@@ -144,9 +131,39 @@ export const Sell = ({ addPost }) => {
                           required
                         />
                       </div>
-                      <div className="py-2">
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Titolo
+                        </p>
+                        <input
+                          type="text"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          placeholder="Titolo"
+                          name="titolo"
+                          onChange={onChange}
+                          value={titolo}
+                          required
+                        />
+                      </div>
+
+                      <div className="grid items-center grid-cols-2 py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Prezzo
+                        </p>
+                        <input
+                          type="number"
+                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          placeholder="Prezzo €"
+                          name="prezzo"
+                          onChange={onChange}
+                          value={titolo}
+                          required
+                        />
+                      </div>
+
+                      <div className="py-2 mt-2">
                         <button
-                          className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
+                          className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 shadow-xl rounded-xl hover:bg-green-700"
                           onClick={() => setCount(count + 1)}
                           disabled={count > 2}
                         >
@@ -157,22 +174,6 @@ export const Sell = ({ addPost }) => {
                   ) : null}
                   {count === 2 ? (
                     <>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          ISBN
-                        </p>
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="ISBN"
-                          name="isbn"
-                          value={isbn}
-                          onChange={onChange}
-                          maxLength="10"
-                          required
-                        />
-                      </div>
-
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Comune
@@ -188,12 +189,12 @@ export const Sell = ({ addPost }) => {
                         />
                       </div>
 
-                      <div className="flex flex-col text-sm">
+                      <div className="flex flex-col py-2 text-sm">
                         <p className="px-2 font-semibold text-left text-s">
                           Descrizione
                         </p>
                         <textarea
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
                           placeholder="Descrizione del libro"
                           name="descrizione"
                           value={descrizione}
@@ -201,12 +202,12 @@ export const Sell = ({ addPost }) => {
                         ></textarea>
                       </div>
 
-                      <div className="items-center mt-4 text-sm text-gray-700 options md:flex md:space-x-6">
+                      <div className="grid items-center grid-cols-2 gap-5 my-2 text-sm text-gray-700 options ">
                         <p className="px-2 font-semibold text-left text-s">
                           Condizione{" "}
                         </p>
                         <select
-                          className="w-full p-2 border border-gray-200 focus:outline-none focus:border-gray-500"
+                          className="w-auto p-2 border border-gray-200 appearance-none bg-gray-50 hover:bg-gray-100 focus:outline-none focus:border-gray-300 rounded-xl"
                           value={condizione}
                           name="condizione"
                           onChange={onChange}
@@ -250,41 +251,50 @@ export const Sell = ({ addPost }) => {
                       </h1>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Titolo:
+                          ISBN:
                         </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{titolo}</p>
-                        </div>
-                      </div>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Sottotiolo:
-                        </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{sottotitolo}</p>
+                        <div className="block w-full px-4 py-2 text-gray-400 uppercase bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{isbn}</p>
                         </div>
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
                           Autore:
                         </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
                           <p>{autore}</p>
                         </div>
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          ISBN:
+                          Titolo:
                         </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{isbn}</p>
+                        <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{titolo}</p>
                         </div>
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
+                          Prezzo:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{autore} €</p>
+                        </div>
+                      </div>
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
+                          Comune:
+                        </p>
+                        <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                          <p>{comune}</p>
+                        </div>
+                      </div>
+
+                      <div className="py-2 text-left">
+                        <p className="px-2 font-semibold text-left text-s">
                           Descrizione:
                         </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
                           <p>{descrizione}</p>
                         </div>
                       </div>
@@ -296,14 +306,7 @@ export const Sell = ({ addPost }) => {
                           <p>{condizione}</p>
                         </div>
                       </div>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Comune:
-                        </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{comune}</p>
-                        </div>
-                      </div>
+
                       <div className="grid grid-cols-2 gap-2">
                         <div className="py-2">
                           <button
