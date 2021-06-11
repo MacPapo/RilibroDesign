@@ -11,11 +11,11 @@ export default function Team() {
             <Nav />
           </div>
           <div className="container pt-40 mx-auto ">
-            <div class="flex flex-col text-center w-full mb-20">
-              <h1 class="text-3xl title-font mb-4 text-white font-extrabold">
+            <div className="flex flex-col w-full mb-20 text-center">
+              <h1 className="mb-4 text-3xl font-extrabold text-white title-font">
                 IL NOSTRO TEAM
               </h1>
-              <p class="lg:w-2/3 mx-auto text-white leading-relaxed text-base">
+              <p className="mx-auto text-base leading-relaxed text-white lg:w-2/3">
                 Incontra il team che gestice Rilibro.it, per più informazioni{" "}
                 <a
                   href="mailto:adm.rilibro@gmail.com"

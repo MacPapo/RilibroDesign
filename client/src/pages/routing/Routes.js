@@ -8,6 +8,7 @@ import Alert from "../../Alert";
 import { Route, Switch } from "react-router-dom";
 import Team from "../team/team.component";
 import Sell from "../sell/sell.component";
+import MyListbox from "../../components/dropdown.component";
 
 const Routes = (props) => {
   return (
@@ -17,6 +18,7 @@ const Routes = (props) => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/team" component={Team} />
+        <Route exact path="/dropdown" component={MyListbox} />
         <PrivateRoute exact path="/profile" component={Profile} />
         <PrivateRoute exact path="/sell" component={Sell} />
       </Switch>
