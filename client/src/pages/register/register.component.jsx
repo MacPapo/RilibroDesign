@@ -129,6 +129,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           value={password}
                           onChange={onChange}
                           required
+                          minLength="8"
                         />
                       </div>
                       <div className="py-2 text-left">
@@ -142,6 +143,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           name="password2"
                           value={password2}
                           onChange={onChange}
+                          minLength="8"
                           required
                         />
                       </div>

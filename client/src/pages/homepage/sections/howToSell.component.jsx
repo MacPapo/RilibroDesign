@@ -1,4 +1,8 @@
-import { BookOpenIcon, ClockIcon, CurrencyEuroIcon } from "@heroicons/react/outline";
+import {
+  BookOpenIcon,
+  ClockIcon,
+  CurrencyEuroIcon,
+} from "@heroicons/react/outline";
 
 const features = [
   {
@@ -16,9 +20,9 @@ const features = [
   {
     titolo: "Affare Fatto!",
     descrizione:
-      "Accordati con il compratore su prezzo e modalità di consegna e effettua lo scambio. Mi raccomando, non pagare mai il compratore in anticipo per ricevere il tuo pagamento, rischi di essere truffato!",
+      "Accordati con il compratore su prezzo e modalità di consegna e effettua lo scambio. Mi raccomando, non pagare mai il venditore in anticipo per ricevere il tuo libro, rischi di essere truffato!",
     icon: CurrencyEuroIcon,
-  }
+  },
 ];
 
 export default function HowToSell() {

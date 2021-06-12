@@ -15,8 +15,9 @@ export default function Team() {
               <h1 className="mb-4 text-3xl font-extrabold text-white title-font">
                 IL NOSTRO TEAM
               </h1>
-              <p className="mx-auto text-base leading-relaxed text-white lg:w-2/3">
-                Incontra il team che gestice Rilibro.it, per più informazioni{" "}
+              <p className="mx-auto text-xl font-extrabold leading-relaxed text-green-50 lg:w-2/3">
+                Incontra il team che gestice Rilibro.it, per più informazioni
+                contatta{" "}
                 <a
                   href="mailto:adm.rilibro@gmail.com"
                   className="text-gray-100 transition-colors duration-300 hover:text-green-400"

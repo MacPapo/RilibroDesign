@@ -161,6 +161,7 @@ export const Sell = ({ addPost }) => {
                           name="prezzo"
                           value={prezzo}
                           required
+                          min="0"
                         />
                       </div>
 
