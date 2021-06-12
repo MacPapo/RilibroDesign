@@ -12,14 +12,13 @@ import {
 } from "./types";
 
 export const addPost = (formData) => async (dispatch) => {
-
   var requestOptions = {
     method: "GET",
     redirect: "follow",
   };
 
   let myResponse;
-  
+
   const response = await fetch(
     `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comuneToUppercase}`,
     requestOptions,
@@ -45,7 +44,8 @@ export const addPost = (formData) => async (dispatch) => {
       autore: formData.autore,
       ISBN: formData.isbn,
       condizione: formData.condizione,
-      immagine: "https://res.cloudinary.com/rilibro/image/upload/v1620286954/default-rilibro_p1prll.jpg",
+      immagine:
+        "https://res.cloudinary.com/rilibro/image/upload/v1620286954/default-rilibro_p1prll.jpg",
       descrizione: formData.descrizione,
     },
     utente: formData.id,
@@ -69,6 +69,26 @@ export const addPost = (formData) => async (dispatch) => {
     });
 
     dispatch(setAlert("Post Created", "success"));
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+export const getPosts = () => async (dispatch) => {
+  console.log("Sono dentro la funzione getPosts");
+
+  try {
+    const res = await api.get("/posts");
+
+    console.log("Nella variabile res --> ", res);
+
+    dispatch({
+      type: GET_POSTS,
+      payload: res.data,
+    });
   } catch (err) {
     dispatch({
       type: POST_ERROR,

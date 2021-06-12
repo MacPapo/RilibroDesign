@@ -19,6 +19,7 @@ const Routes = (props) => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/team" component={Team} />
         <Route exact path="/dropdown" component={MyListbox} />
+        <Route exact path="/buy" />
         <PrivateRoute exact path="/profile" component={Profile} />
         <PrivateRoute exact path="/sell" component={Sell} />
       </Switch>

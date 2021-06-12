@@ -68,7 +68,8 @@ export const Sell = ({ addPost }) => {
       console.log("Il comune non è definito");
       setAlert("Il comune non è definito", "danger");
     } else {
-      const comuneToUppercase = comune.charAt(0).toUpperCase() + comune.slice(1);
+      const comuneToUppercase =
+        comune.charAt(0).toUpperCase() + comune.slice(1);
       console.log("comuneToUppercase ", comuneToUppercase);
       addPost({
         titolo,
@@ -344,6 +345,7 @@ export const Sell = ({ addPost }) => {
 
 Sell.propTypes = {
   addPost: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired,
 };
 
 export default connect(null, { addPost })(Sell);
