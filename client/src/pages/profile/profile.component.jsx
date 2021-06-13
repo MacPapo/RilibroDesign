@@ -90,35 +90,22 @@ export const Profile = ({
                             </div>
                             <div className="flex flex-col md:grid md:grid-flow-col md:grid-cols-2">
                               <div className="px-4 py-2 font-semibold text-center">
-                                Cognome
+                                Telefono
                               </div>
-                              <div className="px-4 py-2 text-center capitalize">{auth.user.cognome}</div>
+                              <div className="px-4 py-2 text-center capitalize">{auth.user.contatti.telefono}</div>
                             </div>
                             <div className="flex flex-col md:grid md:grid-flow-col md:grid-cols-2">
                               <div className="px-4 py-2 font-semibold text-center">
-                                Contatti
+                                Cognome
                               </div>
                               <div className="px-4 py-2 text-center">
-                                {auth.user.contatti.telefono}
+                                {auth.user.cognome}
                               </div>
                             </div>
 
                             <div className="flex flex-col md:grid md:grid-flow-col md:grid-cols-2">
                               <div className="px-4 py-2 font-semibold text-center">
-                                Email
-                              </div>
-                              <div className="px-4 py-2 text-center">
-                                <a
-                                  className="overflow-hidden text-blue-800 overflow-ellipsis"
-                                  href="mailto:jane@example.com"
-                                >
-                                  {auth.user.email}
-                                </a>
-                              </div>
-                            </div>
-                            <div className="flex flex-col md:grid md:grid-flow-col md:grid-cols-2 ">
-                              <div className="px-4 py-2 font-semibold text-center">
-                                Email Di Contatto
+                                Email di contatto
                               </div>
                               <div className="px-4 py-2 text-center">
                                 <a
@@ -129,12 +116,25 @@ export const Profile = ({
                                 </a>
                               </div>
                             </div>
+                            <div className="flex flex-col md:grid md:grid-flow-col md:grid-cols-2 ">
+                              <div className="px-4 py-2 font-semibold text-center">
+                                Email 
+                              </div>
+                              <div className="px-4 py-2 text-center">
+                                <a
+                                  className="overflow-hidden text-blue-800 overflow-ellipsis"
+                                  href="mailto:jane@example.com"
+                                >
+                                  {auth.user.email}
+                                </a>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                <UserPosts />
+                  <UserPosts />
                 </div>
               </div>
               <div className="items-end justify-end">

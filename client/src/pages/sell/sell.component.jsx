@@ -29,18 +29,18 @@ export const Sell = ({ addPost }) => {
     },
     {
       id: 2,
-      label: "Ottimo",
-      value: "Ottimo",
+      label: "Ottimo Stato",
+      value: "Ottimo Stato",
     },
     {
       id: 3,
-      label: "Buono",
-      value: "Buono",
+      label: "Buono Stato",
+      value: "Buono Stato",
     },
     {
       id: 4,
-      label: "Cattivo",
-      value: "Cattivo",
+      label: "Cattivo Stato",
+      value: "Cattivo Stato",
     },
   ];
 
@@ -177,12 +177,12 @@ export const Sell = ({ addPost }) => {
                     <>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Comune
+                          Comune di residenza
                         </p>
                         <input
                           type="text"
                           className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Comune"
+                          placeholder="Comune di residenza"
                           name="comune"
                           value={comune}
                           onChange={onChange}
@@ -284,7 +284,7 @@ export const Sell = ({ addPost }) => {
                       </div>
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Comune:
+                          Comune di residenza:
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
                           <p>{comune}</p>
