@@ -21,14 +21,14 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
             </Link>
           </li>
           <li>
-            <a
-              href="/"
-              aria-label="Home Compra"
-              title="Home Compra"
+            <Link
+              to="/buy"
+              aria-label="Compra"
+              title="Compra"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
             >
               Compra
-            </a>
+            </Link>
           </li>
         </ul>
         <a
@@ -164,7 +164,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                     </li>
                     <li>
                       <Link
-                        to="/"
+                        to="/buy"
                         aria-label="Home Compra"
                         title="Home Compra"
                         className="font-extrabold tracking-wide text-center text-gray-700 transition-colors duration-200 hover:text-green-400"
@@ -225,14 +225,14 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
             </Link>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/buy"
               aria-label="Home Compra"
               title="Home Compra"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
             >
               Compra
-            </a>
+            </Link>
           </li>
         </ul>
         <a
@@ -367,7 +367,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                     </li>
                     <li>
                       <Link
-                        to="/"
+                        to="/buy"
                         aria-label="Home Compra"
                         title="Home Compra"
                         className="font-extrabold tracking-wide text-center text-gray-700 transition-colors duration-200 hover:text-green-400"

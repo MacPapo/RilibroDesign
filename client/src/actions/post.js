@@ -76,23 +76,3 @@ export const addPost = (formData) => async (dispatch) => {
     });
   }
 };
-
-export const getPosts = () => async (dispatch) => {
-  console.log("Sono dentro la funzione getPosts");
-
-  try {
-    const res = await api.get("/posts");
-
-    console.log("Nella variabile res --> ", res);
-
-    dispatch({
-      type: GET_POSTS,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
-  }
-};

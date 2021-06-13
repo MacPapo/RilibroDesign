@@ -1,24 +1,33 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { Component } from "react";
+import Nav from "../../components/navbar.component";
+import Footer from "../../components/footer.component";
+class Buy extends Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: [],
+    };
+  }
 
-import PropTypes from "prop-types";
-import { getPosts } from "../../actions/post";
-import { connect } from "react-redux";
+  componentDidMount() {
+    fetch("https://api.rilibro.it/v1/posts/getAllPosts")
+      .then((response) => response.json())
+      .then((post) => this.setState({ posts: post }));
+  }
 
-const Posts = ({ getPosts, post: { post } }) => {
-  useEffect(() => {
-    getPosts();
-  }, [getPosts]);
+  render() {
+    const { posts } = this.state;
 
-  return <div>Compra dio cane</div>;
-};
+    return (
+      <div className="h-screen">
+        <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
+          <Nav />
+          <Footer />
+        </div>
+      </div>
+    )
+  }
+}
 
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  post: state.post,
-});
-
-export default connect(mapStateToProps, { getPosts })(Posts);
+export default Buy;
