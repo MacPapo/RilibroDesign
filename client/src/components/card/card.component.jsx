@@ -1,11 +1,17 @@
 import React from "react";
 import moment from "moment";
+import 'moment/locale/it'
 
 export const Card = (props) => {
   console.log(
     "Sono dentro la variabile Card, La variabile props contiene --> ",
     props
   );
+
+  let date = props.post.created_at;
+  moment.locale('it');
+  let formDate = moment(date).calendar()
+  console.log("date --> ", formDate);
 
   return (
     <div class="content">
@@ -23,11 +29,9 @@ export const Card = (props) => {
               <div class="flex-auto ml-3 justify-evenly py-2">
                 <div class="flex flex-wrap ">
                   <div class="w-full flex-none text-xs text-blue-700 font-medium ">
-                    {props.post.libro.ISBN}
+                    Shop
                   </div>
-                  <h2 class="flex-auto text-lg font-medium">
-                    {props.post.libro.titolo}
-                  </h2>
+                  <h2 class="flex-auto text-lg font-medium">Massive Dynamic</h2>
                 </div>
                 <p class="mt-3"></p>
                 <div class="flex py-4  text-sm text-gray-600">
@@ -73,7 +77,7 @@ export const Card = (props) => {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <p class="">{moment(props.post.created_at).calendar()}</p>
+                    <p class="">{formDate}</p>
                   </div>
                 </div>
                 <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
