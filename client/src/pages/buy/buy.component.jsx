@@ -2,6 +2,8 @@ import React from "react";
 import { Component } from "react";
 import Nav from "../../components/navbar.component";
 import Footer from "../../components/footer.component";
+import { CardList } from "../../components/card/card-list.component";
+
 class Buy extends Component {
   constructor() {
     super();
@@ -25,7 +27,7 @@ class Buy extends Component {
       <div className="h-screen">
         <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
           <Nav />
-          
+          <CardList posts={posts} />
           <Footer />
         </div>
       </div>
