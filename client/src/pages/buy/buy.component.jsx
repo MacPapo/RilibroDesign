@@ -22,6 +22,7 @@ class Buy extends Component {
     const { posts } = this.state;
     console.log("Il valore di posts -- >", posts);
     return (
+
       <>
         {
           posts === undefined ? (
@@ -39,6 +40,7 @@ class Buy extends Component {
           )
         }
       </>
+
 
 
 
