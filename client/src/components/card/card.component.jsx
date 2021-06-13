@@ -26,7 +26,7 @@ export const Card = (props) => {
                   className="object-scale-down w-full shadow-lg lg:object-cover lg:h-48 rounded-xl"
                 ></img>
               </div>
-<<<<<<< HEAD
+
               <div className="flex-auto py-2 ml-3 justify-evenly">
                 <div className="flex flex-wrap ">
                   <div className="flex-none w-full text-xs font-medium text-green-500 ">
@@ -35,14 +35,7 @@ export const Card = (props) => {
                   <h2 className="flex-auto text-lg font-bold ">
                     {props.post.libro.titolo}
                   </h2>
-=======
-              <div class="flex-auto ml-3 justify-evenly py-2">
-                <div class="flex flex-wrap ">
-                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
-                    Shop
-                  </div>
-                  <h2 class="flex-auto text-lg font-medium">Massive Dynamic</h2>
->>>>>>> fc689a2ebb3357fc175db1414bc2dec5636b0445
+
                 </div>
                 <p className="font-normal text-gray-600">
                   {props.post.libro.autore}
@@ -92,13 +85,9 @@ export const Card = (props) => {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-<<<<<<< HEAD
-                    <p className="">
-                      {moment(props.post.created_at).calendar()}
-                    </p>
-=======
+
                     <p class="">{formDate}</p>
->>>>>>> fc689a2ebb3357fc175db1414bc2dec5636b0445
+
                   </div>
                 </div>
                 <div className="flex p-4 pb-2 border-t border-gray-200 "></div>
