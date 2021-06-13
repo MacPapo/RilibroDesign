@@ -16,13 +16,16 @@ class Buy extends Component {
       .then((post) => this.setState({ posts: post }));
   }
 
+
+
   render() {
     const { posts } = this.state;
-
+    console.log("Il valore di posts -- >", posts);
     return (
       <div className="h-screen">
         <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
           <Nav />
+          
           <Footer />
         </div>
       </div>
