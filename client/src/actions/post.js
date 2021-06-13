@@ -20,7 +20,7 @@ export const addPost = (formData) => async (dispatch) => {
   let myResponse;
 
   const response = await fetch(
-    `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comuneToUppercase}`,
+    `https://api.rilibro.it/v1/towns/getTownInfo?nome=${formData.comune}`,
     requestOptions,
     {}
   )

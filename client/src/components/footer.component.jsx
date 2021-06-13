@@ -6,9 +6,9 @@ export const Footer = () => {
     <div className="px-4 mx-auto mt-20 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2">
-          <p className="text-xl font-bold tracking-wide text-gray-900">
+          <Link to="/" aria-label="Home Rilibro" title="Home Rilibro" className="text-xl font-bold tracking-wide text-green-400 transition-colors duration-300  hover:text-green-700">
             Rilibro
-          </p>
+          </Link>
           <div className="mt-6 lg:max-w-sm">
             <p className="text-sm text-gray-800">
               Rilibro è la piattaforma di compravendita di libri usati creata
