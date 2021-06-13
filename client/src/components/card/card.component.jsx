@@ -8,33 +8,35 @@ export const Card = (props) => {
   );
 
   return (
-    <div class="content">
-      <div class="grid mt-8  gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-        <div class="flex flex-col">
-          <div class="bg-white shadow-md  rounded-3xl p-4">
-            <div class="flex-none lg:flex">
-              <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+    <div className="content">
+      <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 xl:grid-cols-2">
+        <div className="flex flex-col">
+          <div className="p-4 bg-white shadow-md rounded-3xl">
+            <div className="flex-none lg:flex">
+              <div className="w-full h-full mb-3 lg:h-48 lg:w-48 lg:mb-0">
                 <img
                   src={props.post.libro.immagine}
                   alt="Just a flower"
-                  class=" w-full shadow-lg  object-scale-down lg:object-cover  lg:h-48 rounded-xl"
+                  className="object-scale-down w-full shadow-lg lg:object-cover lg:h-48 rounded-xl"
                 ></img>
               </div>
-              <div class="flex-auto ml-3 justify-evenly py-2">
-                <div class="flex flex-wrap ">
-                  <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+              <div className="flex-auto py-2 ml-3 justify-evenly">
+                <div className="flex flex-wrap ">
+                  <div className="flex-none w-full text-xs font-medium text-green-500 ">
                     {props.post.libro.ISBN}
                   </div>
-                  <h2 class="flex-auto text-lg font-medium">
+                  <h2 className="flex-auto text-lg font-bold ">
                     {props.post.libro.titolo}
                   </h2>
                 </div>
-                <p class="mt-3"></p>
-                <div class="flex py-4  text-sm text-gray-600">
-                  <div class="flex-1 inline-flex items-center">
+                <p className="font-normal text-gray-600">
+                  {props.post.libro.autore}
+                </p>
+                <div className="flex py-4 text-sm text-gray-600">
+                  <div className="inline-flex flex-1 items-top">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 mr-3"
+                      className="w-4.5 h-5 mr-2"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -52,16 +54,18 @@ export const Card = (props) => {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       ></path>
                     </svg>
-                    <p class="">
-                      {props.post.location.regione},{" "}
-                      {props.post.location.provincia},{" "}
-                      {props.post.location.comune}
-                    </p>
+                    <div>
+                      <p className="">{props.post.location.regione}</p>
+                      <p>
+                        {props.post.location.provincia},{" "}
+                        {props.post.location.comune}
+                      </p>
+                    </div>
                   </div>
-                  <div class="flex-1 inline-flex items-center">
+                  <div className="inline-flex items-center flex-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 mr-2"
+                      className="w-5 h-5 mr-2"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -73,20 +77,22 @@ export const Card = (props) => {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <p class="">{moment(props.post.created_at).calendar()}</p>
+                    <p className="">
+                      {moment(props.post.created_at).calendar()}
+                    </p>
                   </div>
                 </div>
-                <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
-                <div class="flex space-x-3 text-sm font-medium">
-                  <div class="flex-auto flex space-x-3">
-                    <button class="mb-2 md:mb-0 bg-white px-5 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
-                      <span class="text-green-400 hover:text-green-500 rounded-lg">
+                <div className="flex p-4 pb-2 border-t border-gray-200 "></div>
+                <div className="flex space-x-3 text-sm font-medium">
+                  <div className="flex flex-auto space-x-3">
+                    <button className="inline-flex items-center px-5 py-2 mb-2 space-x-2 tracking-wider text-gray-600 bg-white border rounded-full shadow-sm md:mb-0 hover:bg-gray-100 ">
+                      <span className="text-green-400 rounded-lg hover:text-green-500">
                         <svg
                           aria-hidden="true"
                           focusable="false"
                           data-prefix="fab"
                           data-icon="shopify"
-                          class="svg-inline--fa fa-shopify  w-5 h-5  "
+                          className="w-5 h-5 svg-inline--fa fa-shopify "
                           role="img"
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 448 512"
@@ -101,7 +107,7 @@ export const Card = (props) => {
                     </button>
                   </div>
                   <button
-                    class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                    className="px-5 py-2 mb-2 tracking-wider text-white bg-gray-900 rounded-full shadow-sm md:mb-0 hover:bg-gray-800"
                     type="button"
                     aria-label="like"
                   >
