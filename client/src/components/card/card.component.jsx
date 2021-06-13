@@ -23,9 +23,11 @@ export const Card = (props) => {
               <div class="flex-auto ml-3 justify-evenly py-2">
                 <div class="flex flex-wrap ">
                   <div class="w-full flex-none text-xs text-blue-700 font-medium ">
-                    Shop
+                    {props.post.libro.ISBN}
                   </div>
-                  <h2 class="flex-auto text-lg font-medium">Massive Dynamic</h2>
+                  <h2 class="flex-auto text-lg font-medium">
+                    {props.post.libro.titolo}
+                  </h2>
                 </div>
                 <p class="mt-3"></p>
                 <div class="flex py-4  text-sm text-gray-600">
