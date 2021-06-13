@@ -18,8 +18,6 @@ class Buy extends Component {
       .then((post) => this.setState({ posts: post }));
   }
 
-
-
   render() {
     const { posts } = this.state;
     console.log("Il valore di posts -- >", posts);
@@ -28,10 +26,10 @@ class Buy extends Component {
         <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
           <Nav />
           <CardList posts={posts} />
-          <Footer />
         </div>
+        <Footer />
       </div>
-    )
+    );
   }
 }
 
