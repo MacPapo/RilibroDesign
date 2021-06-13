@@ -25,6 +25,7 @@ class Buy extends Component {
       <div className="h-screen">
         <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
           <Nav />
+
           <CardList posts={posts} />
         </div>
         <Footer />
