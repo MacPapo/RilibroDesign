@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 export const Card = (props) => {
   console.log(
@@ -16,7 +17,7 @@ export const Card = (props) => {
                 <img
                   src={props.post.libro.immagine}
                   alt="Just a flower"
-                  class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl"
+                  class=" w-full shadow-lg  object-scale-down lg:object-cover  lg:h-48 rounded-xl"
                 ></img>
               </div>
               <div class="flex-auto ml-3 justify-evenly py-2">
@@ -49,7 +50,11 @@ export const Card = (props) => {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       ></path>
                     </svg>
-                    <p class="">Cochin,KL</p>
+                    <p class="">
+                      {props.post.location.regione},{" "}
+                      {props.post.location.provincia},{" "}
+                      {props.post.location.comune}
+                    </p>
                   </div>
                   <div class="flex-1 inline-flex items-center">
                     <svg
@@ -66,7 +71,7 @@ export const Card = (props) => {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <p class="">05-25-2021</p>
+                    <p class="">{props.post.created_at.moment().format()}</p>
                   </div>
                 </div>
                 <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
