@@ -256,7 +256,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           Telefono:
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{telefono}</p>
+                          <p>+39{" "}{telefono}</p>
                         </div>
                       </div>
 
