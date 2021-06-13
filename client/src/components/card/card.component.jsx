@@ -71,7 +71,7 @@ export const Card = (props) => {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <p class="">{props.post.created_at.moment().format()}</p>
+                    <p class="">{moment(props.post.created_at).calendar()}</p>
                   </div>
                 </div>
                 <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
