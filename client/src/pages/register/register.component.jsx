@@ -178,6 +178,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                           placeholder="Telefono"
                           name="telefono"
                           value={telefono}
+                          maxLength="10"
                           onChange={onChange}
                           required
                         />
