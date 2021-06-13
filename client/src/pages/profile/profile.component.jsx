@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Spinner from "../../components/Spinner/Spinner";
 import { getProfileById } from "../../actions/profile";
 
+import UserPosts from "./user-posts/userPosts.component";
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
 
@@ -133,6 +134,7 @@ export const Profile = ({
                       </div>
                     </div>
                   </div>
+                <UserPosts />
                 </div>
               </div>
               <div className="items-end justify-end">
