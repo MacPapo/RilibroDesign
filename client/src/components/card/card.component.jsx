@@ -1,8 +1,10 @@
 import React from "react";
 
 export const Card = (props) => {
-
-    console.log("Sono dentro la variabile Card, La variabile props contiene --> ", props);
+  console.log(
+    "Sono dentro la variabile Card, La variabile props contiene --> ",
+    props
+  );
 
   return (
     <div class="content">
@@ -12,7 +14,7 @@ export const Card = (props) => {
             <div class="flex-none lg:flex">
               <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
                 <img
-                  src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+                  src={props.post.libro.immagine}
                   alt="Just a flower"
                   class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl"
                 ></img>
