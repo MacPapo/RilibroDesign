@@ -3,6 +3,7 @@ import {Card} from "./card.component";
 
 
 export const CardList = (props) => {
+    console.log("Sono dentro la vairiabile CardList --> ", props);
     return (
         <div>
             {props.posts.map((post) => (

@@ -1,6 +1,9 @@
 import React from "react";
 
 export const Card = (props) => {
+
+    console.log("Sono dentro la variabile Card, La variabile props contiene --> ", props);
+
   return (
     <div class="content">
       <div class="grid mt-8  gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
