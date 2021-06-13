@@ -64,13 +64,10 @@ export const Sell = ({ addPost }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (comune.trim() === "") {
+    if (comune.length == 0) {
       console.log("Il comune non è definito");
       setAlert("Il comune non è definito", "danger");
     } else {
-      const comuneToUppercase =
-        comune.charAt(0).toUpperCase() + comune.slice(1);
-      console.log("comuneToUppercase ", comuneToUppercase);
       addPost({
         titolo,
         prezzo,
@@ -80,7 +77,7 @@ export const Sell = ({ addPost }) => {
         immagine,
         descrizione,
         id,
-        comuneToUppercase,
+        comune,
       });
     }
   };
