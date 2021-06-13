@@ -40,10 +40,6 @@ class Buy extends Component {
           )
         }
       </>
-
-
-
-
     );
   }
 }
