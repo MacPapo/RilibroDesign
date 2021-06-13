@@ -111,7 +111,7 @@ export const Profile = ({
                                   className="overflow-hidden text-blue-800 overflow-ellipsis"
                                   href="mailto:jane@example.com"
                                 >
-                                  {auth.user.contatti.email}
+                                  {auth.user.email}
                                 </a>
                               </div>
                             </div>
