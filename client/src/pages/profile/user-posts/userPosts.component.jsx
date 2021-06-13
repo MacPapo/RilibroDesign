@@ -45,7 +45,6 @@ class UserPosts extends Component {
                         <CardList posts={posts} />
                     </>
                 )}
-
             </>
         );
     }
