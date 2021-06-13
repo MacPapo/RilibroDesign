@@ -52,7 +52,7 @@ export const addPost = (formData) => async (dispatch) => {
     location: {
       regione: myResponse.nome_regione,
       provincia: myResponse.nome_provincia,
-      comune: formData.comune,
+      comune: myResponse.nome_comune,
     },
   };
 
