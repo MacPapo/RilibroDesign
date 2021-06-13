@@ -35,7 +35,7 @@ class UserPosts extends Component {
             <>
                 {posts.length === 0 ? (
                     <>
-                        <h1 className="font-extrabold uppercase">non hai pubblicato ancora nessun annuncio <Link to="/sell">Clicca pure qui per vendere il tuo primo libro!</Link></h1>
+                        <h1 className="font-extrabold uppercase">non hai pubblicato ancora nessun annuncio <Link to="/sell" className="text-green-400 transition-colors duration-300 hover:text-green-700">Clicca pure qui per vendere il tuo primo libro!</Link></h1>
                     </>
                 ) : (
                     <>
