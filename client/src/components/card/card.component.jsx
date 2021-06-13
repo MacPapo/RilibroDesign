@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import 'moment/locale/it'
+import "moment/locale/it";
 
 export const Card = (props) => {
   console.log(
@@ -9,8 +9,8 @@ export const Card = (props) => {
   );
 
   let date = props.post.created_at;
-  moment.locale('it');
-  let formDate = moment(date).calendar()
+  moment.locale("it");
+  let formDate = moment(date).calendar();
   console.log("date --> ", formDate);
 
   return (
@@ -32,16 +32,15 @@ export const Card = (props) => {
                   <div className="flex-none w-full text-xs font-medium text-green-500 ">
                     {props.post.libro.ISBN}
                   </div>
-                  <h2 className="flex-auto text-lg font-bold ">
+                  <h2 className="flex-auto text-lg font-bold capitalize">
                     {props.post.libro.titolo}
                   </h2>
-
                 </div>
-                <p className="font-normal text-gray-600">
+                <p className="font-normal text-gray-600 capitalize">
                   {props.post.libro.autore}
                 </p>
                 <div className="flex py-4 text-sm text-gray-600">
-                  <div className="inline-flex flex-1 items-top">
+                  <div className="inline-flex items-center flex-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-4.5 h-5 mr-2"
@@ -87,7 +86,6 @@ export const Card = (props) => {
                     </svg>
 
                     <p class="">{formDate}</p>
-
                   </div>
                 </div>
                 <div className="flex p-4 pb-2 border-t border-gray-200 "></div>
