@@ -113,7 +113,7 @@ export const Sell = ({ addPost }) => {
                           name="isbn"
                           value={isbn}
                           onChange={onChange}
-                          maxLength="10"
+                          maxLength="13"
                           required
                         />
                       </div>

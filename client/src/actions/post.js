@@ -54,7 +54,7 @@ export const addPost = (formData) => async (dispatch) => {
       provincia: myResponse.nome_provincia,
       comune: myResponse.nome_comune,
     },
-  };
+  };    
 
   try {
     const res = await api.post("/v1/posts/add", JSON.stringify(body), {
