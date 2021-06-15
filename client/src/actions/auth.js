@@ -1,5 +1,7 @@
 import api from "../utils/api";
 import { setAlert } from "./alert";
+import {ClosingAlert} from "../components/Alert/Alert";
+
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -12,7 +14,6 @@ import {
 
 // Load User
 export const loadUser = () => async (dispatch) => {
-
   console.log("Sono dentro la furnzione LoadUser");
 
   try {
@@ -28,7 +29,6 @@ export const loadUser = () => async (dispatch) => {
       type: USER_LOADED,
       payload: res.data,
     });
-    
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -38,7 +38,7 @@ export const loadUser = () => async (dispatch) => {
 
 // Register User
 export const register = (formData) => async (dispatch) => {
-  console.log("Dati utente", formData)
+  console.log("Dati utente", formData);
   const body = {
     nome: formData.nome,
     cognome: formData.cognome,
@@ -52,7 +52,10 @@ export const register = (formData) => async (dispatch) => {
   };
 
   try {
-    const res = await api.post("/v1/authenticate/register", JSON.stringify(body))
+    const res = await api.post(
+      "/v1/authenticate/register",
+      JSON.stringify(body)
+    );
 
     console.log("risposta", res);
 
@@ -76,7 +79,6 @@ export const register = (formData) => async (dispatch) => {
 
 // Login User
 export const login = (email, password) => async (dispatch) => {
-
   console.log("Sono dentro la funzione di Login");
 
   const body = { email, password };
