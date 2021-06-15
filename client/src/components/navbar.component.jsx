@@ -31,8 +31,8 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
             </Link>
           </li>
         </ul>
-        <a
-          href="/"
+        <Link
+          to="/"
           aria-label="Rilibro"
           title="Rilibro"
           className="inline-flex items-center lg:mx-auto"
@@ -55,7 +55,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
             Rilibro
           </span>
-        </a>
+        </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
           <li>
             <Link
@@ -235,8 +235,8 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
             </Link>
           </li>
         </ul>
-        <a
-          href="/"
+        <Link
+          to="/"
           aria-label="Rilibro"
           title="Rilibro"
           className="inline-flex items-center lg:mx-auto"
@@ -259,7 +259,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
             Rilibro
           </span>
-        </a>
+        </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
           <li>
             <Link
