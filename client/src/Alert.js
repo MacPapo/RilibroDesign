@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const Alert = ({ alerts }) =>
 
   alerts.map((alert) => (
-    <div className="relative py-4 text-white bg-red-500 border-0">
+    <div className="static py-4 text-white bg-red-500 border-0 ">
       <div key={alert.id} className={`alert alert-${alert.alertType}`}>
         {alert.msg}
       </div>
