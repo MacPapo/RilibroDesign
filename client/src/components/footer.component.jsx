@@ -1,13 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LogoRilibroSVGFooter from "../assets/svg/logoFooter.svg";
+import { TiSocialInstagram } from "react-icons/ti";
+import "../icons.css";
 
 export const Footer = () => {
   return (
     <div className="px-4 mx-auto mt-20 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2">
-          <Link to="/" aria-label="Home Rilibro" title="Home Rilibro" className="text-xl font-bold tracking-wide text-green-400 transition-colors duration-300  hover:text-green-700">
-            Rilibro
+          <Link
+            to="/"
+            aria-label="Home Rilibro"
+            title="Home Rilibro"
+            className="text-xl font-bold tracking-wide text-green-400 transition-colors duration-300 hover:text-green-700"
+          >
+            <LogoRilibroSVGFooter />
           </Link>
           <div className="mt-6 lg:max-w-sm">
             <p className="text-sm text-gray-800">
@@ -52,20 +60,18 @@ export const Footer = () => {
         </div>
         <div>
           <span className="flex flex-row items-center text-base font-bold tracking-wide text-gray-900">
-            Facebook
+            Instagram
             <div className="ml-2 space-x-3 ">
               <a
-                href="https://www.facebook.com/147999005468g"
+                href="https://www.instagram.com/rilibro.it/?utm_medium=copy_link"
                 className="text-green-400 transition-colors duration-300 hover:text-green-700"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
-                  <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
-                </svg>
+                <TiSocialInstagram className="INSTAICON" />
               </a>
             </div>
           </span>
           <p className="mt-4 text-sm text-gray-500">
-            Segui le ultime novità sulla nostra pagina Facebook ufficiale.
+            Segui le ultime novità sulla nostra pagina Instagram ufficiale.
           </p>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../actions/auth";
+import LogoRilibroSVG from "../assets/svg/logoNormal.svg";
 export const Nav = ({ auth: { isAuthenticated }, logout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -37,24 +38,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           title="Rilibro"
           className="inline-flex items-center lg:mx-auto"
         >
-          <svg
-            className="w-8 text-green-400"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12" />
-            <rect x="3" y="17" width="7" height="6" />
-            <rect x="14" y="1" width="7" height="6" />
-            <rect x="14" y="11" width="7" height="12" />
-          </svg>
-          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Rilibro
-          </span>
+          <LogoRilibroSVG />
         </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
           <li>
@@ -103,7 +87,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 z-50 w-full">
-              <div className="p-5 border rounded rounded-b-xl bg-gray-50">
+              <div className="p-5 rounded rounded-b-xl bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
@@ -112,31 +96,14 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                       title="Rilibro"
                       className="inline-flex items-center"
                     >
-                      <svg
-                        className="w-8 text-green-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Rilibro
-                      </span>
+                      <LogoRilibroSVG />
                     </Link>
                   </div>
                   <div>
                     <button
                       aria-label="Close Menu"
                       title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      className="p-2 -mt-2 -mr-1 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -241,24 +208,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           title="Rilibro"
           className="inline-flex items-center lg:mx-auto"
         >
-          <svg
-            className="w-8 text-green-400"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12" />
-            <rect x="3" y="17" width="7" height="6" />
-            <rect x="14" y="1" width="7" height="6" />
-            <rect x="14" y="11" width="7" height="12" />
-          </svg>
-          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Rilibro
-          </span>
+          <LogoRilibroSVG />
         </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
           <li>
@@ -306,7 +256,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 z-50 w-full">
-              <div className="p-5 border shadow-xl rounded-b-xl bg-gray-50">
+              <div className="p-5 shadow-xl rounded-b-xl bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
@@ -315,31 +265,14 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                       title="Rilibro"
                       className="inline-flex items-center"
                     >
-                      <svg
-                        className="w-8 text-green-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Rilibro
-                      </span>
+                      <LogoRilibroSVG />
                     </Link>
                   </div>
                   <div>
                     <button
                       aria-label="Close Menu"
                       title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      className="p-2 -mt-2 -mr-1 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -352,7 +285,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                   </div>
                 </div>
                 <nav>
-                  <ul className="space-y-4">
+                  <ul className="space-y-4 ">
                     <li>
                       <Link
                         to="/sell"
@@ -385,7 +318,7 @@ export const Nav = ({ auth: { isAuthenticated }, logout }) => {
                           title="Login"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-400"
                         >
-                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 shadow-xl rounded-xl hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                          <button className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-green-400 shadow-inner rounded-xl hover:bg-green-700 focus:shadow-outline focus:outline-none">
                             Accedi
                           </button>
                         </Link>

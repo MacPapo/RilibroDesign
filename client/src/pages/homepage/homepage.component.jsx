@@ -14,8 +14,8 @@ const HomePage = () => {
             <Nav />
           </div>
           <div className=" h-80">
-            <div className="justify-center mx-auto lg:py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8">
-              <div className=" p-5 lg:p-2.5 shadow-xl lg:rounded-xl relative flex items-center bg-white bg-opacity-60 border-gray-300 border-opacity-90">
+            <div className="justify-center w-full h-full bg-white border-gray-300 shadow-xl lg:bg-transparent border-opacity-90 bg-opacity-60">
+              <div className="relative p-5 py-12 lg:px-8 lg:max-w-screen-xl lg:mx-auto">
                 <SearchBox />
               </div>
             </div>
