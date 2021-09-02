@@ -9,6 +9,7 @@ module.exports = {
         "login-fixed": "url('assets/images/WP04.jpg')",
         "register-fixed": "url('assets/images/WP05.jpg')",
         "sell-fixed": "url('assets/images/WP03.jpg')",
+        "buy-fixed": "url('assets/images/WP08.jpg')",
         "team-fixed": "url('assets/images/WPTEAM.jpg')",
         "team-phone": "url('assets/images/WPTEAM2.jpg')",
       }),

@@ -28,7 +28,7 @@ class Buy extends Component {
         ) : (
           <>
             <div div className="h-screen">
-              <div className="justify-center bg-fixed bg-center items-top bg-login-fixed">
+              <div className="justify-center bg-fixed bg-center bg-cover items-top bg-buy-fixed">
                 <Nav />
                 <CardList posts={posts} />
               </div>

@@ -64,7 +64,7 @@ export const Sell = ({ addPost }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (comune.length == 0) {
+    if (comune.length === 0) {
       console.log("Il comune non è definito");
       setAlert("Il comune non è definito", "danger");
     } else {
