@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -10,7 +10,14 @@ import Nav from "../../components/navbar.component";
 
 import "../../index.css";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Login = ({ login, isAuthenticated }) => {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,17 +38,23 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <div className="h-screen">
+    <>
       <div className="justify-center bg-fixed bg-center bg-cover items-top bg-login-fixed">
         <Nav />
         <div className="mt-20 justify-items-center">
           <div className="flex items-center justify-center lg:pb-20">
-            <div className="relative w-full px-4 py-16 text-center transition duration-700 bg-white rounded-t-xl lg:shadow-xl lg:px-24 lg:max-w-xl lg:rounded-xl">
+            <div
+              className="relative w-full px-4 py-16 text-center transition duration-700 bg-white rounded-t-xl lg:shadow-xl lg:px-24 lg:max-w-xl lg:rounded-xl"
+              data-aos="zoom-in-up"
+            >
               <form className="text-center" onSubmit={onSubmit}>
-                <h1 className="w-full mb-8 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700">
+                <h1
+                  className="w-full mb-8 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700"
+                  data-aos="zoom-in-up"
+                >
                   Accedi
                 </h1>
-                <div className="py-2 text-left">
+                <div className="py-2 text-left" data-aos="zoom-in-up">
                   <p className="px-2 font-semibold text-left text-s">Email</p>
                   <input
                     type="email"
@@ -53,7 +66,7 @@ const Login = ({ login, isAuthenticated }) => {
                     required
                   />
                 </div>
-                <div className="py-2 text-left">
+                <div className="py-2 text-left" data-aos="zoom-in-up">
                   <p className="px-2 font-semibold text-left text-s">
                     Password
                   </p>
@@ -67,7 +80,7 @@ const Login = ({ login, isAuthenticated }) => {
                     minLength="8"
                   />
                 </div>
-                <div className="py-2">
+                <div className="py-2" data-aos="zoom-in-up">
                   <button
                     type="submit"
                     className="block w-full p-2 font-bold tracking-wider text-white transition duration-500 bg-green-500 shadow-sm hover:shadow-inner rounded-xl hover:bg-green-700 focus:outline-none"
@@ -76,12 +89,12 @@ const Login = ({ login, isAuthenticated }) => {
                   </button>
                 </div>
               </form>
-              <div className="text-center">
+              <div className="text-center" data-aos="zoom-in-up">
                 <Link href="/forgot-password" className="hover:underline">
                   Password dimenticata?
                 </Link>
               </div>
-              <div className="mt-12 text-center">
+              <div className="mt-12 text-center" data-aos="zoom-in-up">
                 <span>Non hai un account? </span>
                 <Link
                   to="/register"
@@ -97,7 +110,7 @@ const Login = ({ login, isAuthenticated }) => {
       <div className="items-end justify-end">
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

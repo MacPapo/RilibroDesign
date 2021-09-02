@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { setAlert } from "../../actions/alert";
 import { Link, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -7,8 +7,15 @@ import { connect } from "react-redux";
 import Footer from "../../components/footer.component";
 import Nav from "../../components/navbar.component";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { register } from "../../actions/auth";
 const Register = ({ setAlert, register, isAuthenticated }) => {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   const [formData, setFormData] = useState({
     nome: "",
     cognome: "",
@@ -51,262 +58,282 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
   return (
     <>
-      <div className="h-screen ">
-        <div className="justify-center bg-fixed bg-center bg-cover items-top bg-register-fixed">
-          <Nav />
-          <div className="mt-20 justify-items-center ">
-            <div className="flex items-center justify-center lg:pb-20">
-              <div className="relative w-full px-4 py-16 text-center transition duration-700 bg-white rounded-t-xl lg:shadow-xl lg:px-24 lg:max-w-xl lg:rounded-xl">
-                <h1 className="w-full mb-4 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700">
-                  Registrati
-                </h1>
-                <div className="flex justify-center my-6">
-                  <div className="inline-flex h-1 bg-green-400 rounded-full w-36 "></div>
-                </div>
-                <h1 className="w-full mb-4 text-xl font-bold tracking-wider text-gray-600 hover:text-green-700">
-                  Step {count} di 3
-                </h1>
-                <form className="p-1 text-center" onSubmit={onSubmit}>
-                  {count === 1 ? (
-                    <>
-                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
-                        Info Personali
-                      </h1>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="py-2 text-left">
-                          <p className="px-2 font-semibold text-left text-s">
-                            Nome 👤
-                          </p>
-                          <input
-                            type="text"
-                            className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                            placeholder="Nome"
-                            name="nome"
-                            value={nome}
-                            onChange={onChange}
-                            required
-                          />
-                        </div>
-
-                        <div className="py-2 text-left">
-                          <p className="px-2 font-semibold text-left text-s">
-                            Cognome 👤
-                          </p>
-                          <input
-                            type="text"
-                            className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                            placeholder="Cognome"
-                            name="cognome"
-                            value={cognome}
-                            onChange={onChange}
-                            required
-                          />
-                        </div>
-                      </div>
+      <div className="justify-center bg-fixed bg-center bg-cover items-top bg-register-fixed">
+        <Nav />
+        <div className="mt-20 justify-items-center ">
+          <div className="flex items-center justify-center lg:pb-20">
+            <div
+              className="relative w-full px-4 py-16 text-center transition duration-700 bg-white rounded-t-xl lg:shadow-xl lg:px-24 lg:max-w-xl lg:rounded-xl"
+              data-aos="zoom-in-up"
+            >
+              <h1
+                className="w-full mb-4 text-3xl font-bold tracking-wider text-gray-600 hover:text-green-700"
+                data-aos="zoom-in-up"
+              >
+                Registrati
+              </h1>
+              <div className="flex justify-center my-6" data-aos="zoom-in-up">
+                <div className="inline-flex h-1 bg-green-400 rounded-full w-36 "></div>
+              </div>
+              <h1
+                className="w-full mb-4 text-xl font-bold tracking-wider text-gray-600 hover:text-green-700"
+                data-aos="zoom-in-up"
+              >
+                Step {count} di 3
+              </h1>
+              <form
+                className="p-1 text-center"
+                onSubmit={onSubmit}
+                data-aos="zoom-in-up"
+              >
+                {count === 1 ? (
+                  <>
+                    <h1
+                      className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700"
+                      data-aos="fade"
+                    >
+                      Info Personali
+                    </h1>
+                    <div className="grid grid-cols-2 gap-2" data-aos="fade">
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Email 📧
-                        </p>
-                        <input
-                          type="email"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Email"
-                          name="email"
-                          value={email}
-                          onChange={onChange}
-                          required
-                        />
-                      </div>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Password 🤫
-                        </p>
-                        <input
-                          type="password"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Password"
-                          name="password"
-                          value={password}
-                          onChange={onChange}
-                          required
-                          minLength="8"
-                        />
-                      </div>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Conferma Password 🤫
-                        </p>
-                        <input
-                          type="password"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Conferma Password"
-                          name="password2"
-                          value={password2}
-                          onChange={onChange}
-                          minLength="8"
-                          required
-                        />
-                      </div>
-                    </>
-                  ) : null}
-                  {count === 2 ? (
-                    <>
-                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
-                        Contatti
-                      </h1>
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Username 📇
+                          Nome 👤
                         </p>
                         <input
                           type="text"
                           className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Username"
-                          name="username"
-                          value={username}
+                          placeholder="Nome"
+                          name="nome"
+                          value={nome}
                           onChange={onChange}
                           required
                         />
                       </div>
-                      <div className="py-2 text-left">
+
+                      <div className="py-2 text-left" data-aos="fade">
                         <p className="px-2 font-semibold text-left text-s">
-                          Telefono ☎️
+                          Cognome 👤
                         </p>
                         <input
                           type="text"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Telefono"
-                          name="telefono"
-                          value={telefono}
-                          maxLength="10"
+                          className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                          placeholder="Cognome"
+                          name="cognome"
+                          value={cognome}
                           onChange={onChange}
                           required
                         />
                       </div>
+                    </div>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Email 📧
+                      </p>
+                      <input
+                        type="email"
+                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Email"
+                        name="email"
+                        value={email}
+                        onChange={onChange}
+                        required
+                      />
+                    </div>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Password 🤫
+                      </p>
+                      <input
+                        type="password"
+                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Password"
+                        name="password"
+                        value={password}
+                        onChange={onChange}
+                        required
+                        minLength="8"
+                      />
+                    </div>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Conferma Password 🤫
+                      </p>
+                      <input
+                        type="password"
+                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Conferma Password"
+                        name="password2"
+                        value={password2}
+                        onChange={onChange}
+                        minLength="8"
+                        required
+                      />
+                    </div>
+                  </>
+                ) : null}
+                {count === 2 ? (
+                  <>
+                    <h1
+                      className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700"
+                      data-aos="fade"
+                    >
+                      Contatti
+                    </h1>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Username 📇
+                      </p>
+                      <input
+                        type="text"
+                        className="block w-full px-4 py-2 capitalize bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Username"
+                        name="username"
+                        value={username}
+                        onChange={onChange}
+                        required
+                      />
+                    </div>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Telefono ☎️
+                      </p>
+                      <input
+                        type="text"
+                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Telefono"
+                        name="telefono"
+                        value={telefono}
+                        maxLength="10"
+                        onChange={onChange}
+                        required
+                      />
+                    </div>
 
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Email Di Contatto 📬
+                      </p>
+                      <input
+                        type="email"
+                        className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
+                        placeholder="Email"
+                        name="email2"
+                        value={email2}
+                        onChange={onChange}
+                        required
+                      />
+                    </div>
+                  </>
+                ) : null}
+                {count === 3 ? (
+                  <>
+                    <h1
+                      className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700"
+                      data-aos="fade"
+                    >
+                      Riepilogo
+                    </h1>
+                    <div className="grid grid-cols-2 gap-2" data-aos="fade">
                       <div className="py-2 text-left">
                         <p className="px-2 font-semibold text-left text-s">
-                          Email Di Contatto 📬
-                        </p>
-                        <input
-                          type="email"
-                          className="block w-full px-4 py-2 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700"
-                          placeholder="Email"
-                          name="email2"
-                          value={email2}
-                          onChange={onChange}
-                          required
-                        />
-                      </div>
-                    </>
-                  ) : null}
-                  {count === 3 ? (
-                    <>
-                      <h1 className="w-full mb-4 text-lg font-bold tracking-wider text-gray-600 hover:text-green-700">
-                        Riepilogo
-                      </h1>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="py-2 text-left">
-                          <p className="px-2 font-semibold text-left text-s">
-                            Nome:
-                          </p>
-                          <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                            <p className="capitalize">{nome}</p>
-                          </div>
-                        </div>
-
-                        <div className="py-2 text-left">
-                          <p className="px-2 font-semibold text-left text-s">
-                            Cognome:
-                          </p>
-                          <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                            <p className="capitalize">{cognome}</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Username:
+                          Nome:
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p className="capitalize">{username}</p>
+                          <p className="capitalize">{nome}</p>
                         </div>
                       </div>
 
-                      <div className="py-2 text-left">
+                      <div className="py-2 text-left" data-aos="fade">
                         <p className="px-2 font-semibold text-left text-s">
-                          Email Personale:
+                          Cognome:
                         </p>
                         <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{email}</p>
+                          <p className="capitalize">{cognome}</p>
                         </div>
                       </div>
+                    </div>
 
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Email di Contatto:
-                        </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>{email2}</p>
-                        </div>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Username:
+                      </p>
+                      <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <p className="capitalize">{username}</p>
                       </div>
+                    </div>
 
-                      <div className="py-2 text-left">
-                        <p className="px-2 font-semibold text-left text-s">
-                          Telefono:
-                        </p>
-                        <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
-                          <p>+39{" "}{telefono}</p>
-                        </div>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Email Personale:
+                      </p>
+                      <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <p>{email}</p>
                       </div>
+                    </div>
 
-                      <div className="py-2">
-                        <button
-                          type="submit"
-                          className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
-                        >
-                          Registrati
-                        </button>
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Email di Contatto:
+                      </p>
+                      <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <p>{email2}</p>
                       </div>
-                    </>
-                  ) : null}
-                </form>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    className="block w-full p-2 font-bold tracking-wider text-white bg-red-300 rounded-xl hover:bg-red-400"
-                    type="submit"
-                    onClick={() => setCount(count - 1)}
-                    disabled={count === 1}
-                  >
-                    Indietro
-                  </button>
-                  <button
-                    className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
-                    type="submit"
-                    onClick={() => setCount(count + 1)}
-                    disabled={count > 2}
-                    hidden={count > 2}
-                  >
-                    Avanti
-                  </button>
-                </div>
-                <div className="mt-8 text-center">
-                  <span>Hai già un account? </span>
-                  <Link
-                    to="/login"
-                    className="font-semibold text-black text-md hover:text-green-700"
-                  >
-                    Accedi
-                  </Link>
-                </div>
+                    </div>
+
+                    <div className="py-2 text-left" data-aos="fade">
+                      <p className="px-2 font-semibold text-left text-s">
+                        Telefono:
+                      </p>
+                      <div className="block w-full px-4 py-2 text-gray-400 bg-gray-200 shadow-inner rounded-xl focus:outline-none focus:border-green-700">
+                        <p>+39 {telefono}</p>
+                      </div>
+                    </div>
+
+                    <div className="py-2" data-aos="fade">
+                      <button
+                        type="submit"
+                        className="block w-full p-2 font-bold tracking-wider text-white bg-green-500 rounded-xl hover:bg-green-700"
+                      >
+                        Registrati
+                      </button>
+                    </div>
+                  </>
+                ) : null}
+              </form>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  className="block w-full p-2 font-bold tracking-wider text-white bg-red-300 rounded-xl hover:bg-red-400"
+                  type="submit"
+                  onClick={() => setCount(count - 1)}
+                  disabled={count === 1}
+                >
+                  Indietro
+                </button>
+                <button
+                  className="block w-full p-2 font-bold tracking-wider text-white bg-green-300 rounded-xl hover:bg-green-700"
+                  type="submit"
+                  onClick={() => setCount(count + 1)}
+                  disabled={count > 2}
+                  hidden={count > 2}
+                >
+                  Avanti
+                </button>
+              </div>
+              <div className="mt-8 text-center">
+                <span>Hai già un account? </span>
+                <Link
+                  to="/login"
+                  className="font-semibold text-black text-md hover:text-green-700"
+                >
+                  Accedi
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        <div className="items-end justify-end">
-          <Footer />
-        </div>
+      </div>
+      <div className="items-end justify-end">
+        <Footer />
       </div>
     </>
   );

@@ -1,4 +1,8 @@
 import { SearchIcon, UsersIcon, CheckIcon } from "@heroicons/react/outline";
+import React, { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const features = [
   {
@@ -22,9 +26,13 @@ const features = [
 ];
 
 export default function HowToBuy() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
     <div className="container px-5 mx-auto py-14">
-      <div className="mb-20 text-center">
+      <div className="mb-20 text-center" data-aos="slide-up">
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 uppercase sm:text-2xl title-font">
           Come comprare su rilibro
         </h1>
@@ -35,6 +43,7 @@ export default function HowToBuy() {
       <div className="flex flex-wrap -mx-4 -mt-4 -mb-10 space-y-6 sm:-m-4 md:space-y-0">
         {features.map((feature) => (
           <div
+            data-aos="slide-up"
             key={feature.titolo}
             className="flex flex-col items-center p-4 text-center md:w-1/3"
           >
