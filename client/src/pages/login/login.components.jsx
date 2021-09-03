@@ -90,7 +90,7 @@ const Login = ({ login, isAuthenticated }) => {
                 </div>
               </form>
               <div className="text-center" data-aos="zoom-in-up">
-                <Link href="/forgot-password" className="hover:underline">
+                <Link to="/forgot-password" className="hover:underline">
                   Password dimenticata?
                 </Link>
               </div>
